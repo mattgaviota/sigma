@@ -137,9 +137,6 @@ public class test{
 		JMapFrame frame;
 		AbstractGridCoverage2DReader reader;
 		aux cosas = new aux();
-		/*File mapa = new File("/home/dieguit/unsa/meto/proyecto/maps/salta/lugares.shp");
-		File mapa2 = new File("/home/dieguit/unsa/meto/proyecto/maps/salta/lugares2.shp");
-		File mapa3 = new File("/home/dieguit/unsa/meto/proyecto/maps/salta/lugares3.shp");a*/
 		File mapa = new File("./mapas/salta/lugares.shp");
 		File mapa2 = new File("./mapas/salta/lugares2.shp");
 		File mapa3 = new File("./mapas/salta/lugares3.shp");
@@ -153,7 +150,7 @@ public class test{
         store = FileDataStoreFinder.getDataStore(mapa3);
         FeatureSource featureSource3 = store.getFeatureSource();
         
-        File img = new File("/home/dieguit/unsa/meto/proyecto/maps/salta/centrosalta.jpg");
+        File img = new File("./mapas/salta/centrosalta.jpg");
         if (img == null) {
             return;
         }
