@@ -5,5 +5,5 @@ git clone http://github.com/mattgaviota/sigma.git
 
 Atencion!!
 - en /libs esta la libreria de java advance imaging, q se anda haciendo la loca para ser descargada.. la referencian en el proyecto o bien la pegan en donde estan las librerias.
-- el mapa a de fondo es centrosalta.jpg
+- el mapa de fondo es centrosalta.jpg
 - los shapefiles son lugares1[2,3].shp
