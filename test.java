@@ -153,7 +153,7 @@ public class test{
         store = FileDataStoreFinder.getDataStore(mapa3);
         FeatureSource featureSource3 = store.getFeatureSource();
         
-        File img = new File("/home/dieguit/unsa/meto/proyecto/maps/salta/centrosalta.jpg");
+        File img = new File("./mapas/salta/centrosalta.jpg");
         if (img == null) {
             return;
         }
