@@ -1,9 +1,9 @@
 "Latitude","Longitude","Name","Description","Telephone number","Photo./fotos/asd.jpg","WebPage"
--24.78891,-65.409552,Museo de Arte Contemporaneo,Zuviria 90,0387-4213635, ./fotos/artecontemporaneo.jpg,http://www.culturasalta.gov.ar/content/view/154/198/
--24.789817,-65.410369,Museo Historico del Norte,Caseros 549,0387-4215340,./fotos/cabildo.jpg,http://www.museonor.gov.ar/edificio.htm
--24.789997,-65.408545,Museo Pte Jose E. Uriburu, Caseros 417, 0387-4218174,./fotos/uriburu.jpg,http://www.salta.net/servicios.php?idioma=esp&sesion=1a2c797f4f2825163a741318cd4eeded&id_rubro=27
--24.79092,-65.41255,Museo de la Ciudad de Salta, Florida 97, 03874373352,./fotos/ciudaddesalta.jpg,http://www.municipalidad-salta.gov.ar/museo/
--24.788918,-65.411002,Museo de Arqueologia de Alta Montaña,Mitre 77,0387-4370499,./fotos.maam.jpg,http://www.culturasalta.gov.ar/content/view/68/131/
--24.789921,-65.409157,Casa de la Cultura,Caseros 460,0387-4214714,./fotos/casadelacultura.jpg,http://www.culturasalta.gov.ar/ 
--24.788777,-65.406784,Museo Pajarito Velarde,Pueyrredon 106,0387-421-2921,./fotos/pajaritovelarde.jpg,http://www.camdipsalta.gov.ar/INFSALTA/pajarito.htm
+-65.409552,-24.78891,Museo de Arte Contemporaneo,Zuviria 90,0387-4213635, ./fotos/artecontemporaneo.jpg,http://www.culturasalta.gov.ar/content/view/154/198/
+-65.410369,-24.789817,Museo Historico del Norte,Caseros 549,0387-4215340,./fotos/cabildo.jpg,http://www.museonor.gov.ar/edificio.htm
+-65.408545-24.789997,,Museo Pte Jose E. Uriburu, Caseros 417, 0387-4218174,./fotos/uriburu.jpg,http://www.salta.net/servicios.php?idioma=esp&sesion=1a2c797f4f2825163a741318cd4eeded&id_rubro=27
+-65.41255,-24.79092,Museo de la Ciudad de Salta, Florida 97, 03874373352,./fotos/ciudaddesalta.jpg,http://www.municipalidad-salta.gov.ar/museo/
+-65.411002,-24.788918,Museo de Arqueologia de Alta Montaña,Mitre 77,0387-4370499,./fotos.maam.jpg,http://www.culturasalta.gov.ar/content/view/68/131/
+-65.409157,-24.789921,Casa de la Cultura,Caseros 460,0387-4214714,./fotos/casadelacultura.jpg,http://www.culturasalta.gov.ar/ 
+-65.406784,-24.788777,Museo Pajarito Velarde,Pueyrredon 106,0387-421-2921,./fotos/pajaritovelarde.jpg,http://www.camdipsalta.gov.ar/INFSALTA/pajarito.htm
 
