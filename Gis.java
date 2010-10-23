@@ -40,7 +40,7 @@ public class Gis {
 		Vector <Capa> capas = new Vector();
 		Capa capa;
 		Style estilo;
-		FeatureSource featureSource;
+		SimpleFeatureSource featureSource;
 		FileDataStore store;
 		File mapa;
 		//saco una capa, la convierto, en base a ella genero un estilo
