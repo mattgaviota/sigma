@@ -1,8 +1,8 @@
-.. figure:: http://github.com/mattgaviota/sigma/raw/master/logo.png
-   :align: center
-
 Proyecto de SIG en Java
 =======================
+
+.. figure:: http://github.com/mattgaviota/sigma/raw/master/logo.png
+   :align: right
 
 Descripción
 -----------
