@@ -1,5 +1,6 @@
 .. figure:: http://github.com/mattgaviota/sigma/raw/master/logo.png
-   :align: right
+   :scale: 50 %
+   :align: 'right'
 
 Proyecto de SIG en Java
 =======================
