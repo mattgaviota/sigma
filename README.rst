@@ -1,3 +1,6 @@
+.. figure:: http://github.com/mattgaviota/sigma/blob/master/logo.png
+   :align: right
+
 Proyecto de SIG en Java
 =======================
 
