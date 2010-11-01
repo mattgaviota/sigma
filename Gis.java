@@ -1,33 +1,14 @@
 import java.util.Vector;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.*;
-import org.geotools.data.*;
-import org.geotools.coverage.GridSampleDimension;
-import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
 import org.geotools.coverage.grid.io.AbstractGridFormat;
 import org.geotools.coverage.grid.io.GridFormatFinder;
 import org.geotools.data.FileDataStore;
 import org.geotools.data.FileDataStoreFinder;
-import org.geotools.data.Parameter;
 import org.geotools.data.simple.SimpleFeatureSource;
-import org.geotools.factory.CommonFactoryFinder;
-import org.geotools.map.DefaultMapContext;
-import org.geotools.map.MapContext;
 import org.geotools.styling.*;
-import org.geotools.swing.JMapFrame;
-import org.geotools.swing.action.SafeAction;
-import org.geotools.swing.data.JParameterListWizard;
-import org.geotools.swing.wizard.JWizard;
-import org.geotools.swing.data.JFileDataStoreChooser;
-import org.geotools.util.KVP;
-import org.opengis.filter.FilterFactory2;
-import org.opengis.style.ContrastMethod;
+
+
 
 public class Gis {
 	public static void main(String[] args) throws Exception {

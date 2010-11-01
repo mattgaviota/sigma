@@ -1,5 +1,3 @@
-import java.util.Vector;
-import org.geotools.data.*;
 import org.geotools.styling.*;
 import org.opengis.feature.type.GeometryDescriptor;
 import org.geotools.data.simple.SimpleFeatureSource;

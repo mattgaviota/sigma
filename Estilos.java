@@ -3,8 +3,6 @@ import java.io.IOException;
 import org.geotools.coverage.GridSampleDimension;
 import org.geotools.coverage.grid.GridCoverage2D;
 import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
-import org.geotools.coverage.grid.io.AbstractGridFormat;
-import org.geotools.coverage.grid.io.GridFormatFinder;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.styling.*;
 import org.opengis.filter.FilterFactory2;
