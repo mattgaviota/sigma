@@ -49,7 +49,7 @@ public class Gis {
         capas.add(new Capa(featureSource,estilo));
         
         //ahora la img de fondo 
-        File img = new File("./mapas/salta/centrosalta.jpg");
+        File img = new File("./mapas/salta/mapasalta.png");
         AbstractGridFormat format = GridFormatFinder.findFormat(img);        
         reader = format.getReader(img);
         estilo = creadorEstilo.RGB(reader); //para q sea con color

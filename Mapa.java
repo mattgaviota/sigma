@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
+import javax.swing.Icon;
 import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.map.DefaultMapContext;
@@ -52,7 +53,8 @@ class Mapa{
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
         JToolBar toolBar = frame.getToolBar();
-        JButton btn = new JButton("Mostrar Info");
+        Icon InfoIcono = new ImageIcon("./information.gif");
+        JButton btn = new JButton(InfoIcono);
         toolBar.addSeparator();
         toolBar.add(btn);
 
