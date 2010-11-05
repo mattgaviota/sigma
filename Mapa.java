@@ -31,11 +31,13 @@ import org.opengis.filter.FilterFactory2;
 
 
 class Mapa{
-	JMapFrame frame;
+        //Atributos
+    JMapFrame frame;
 	Vector<Capa> sources;
 	StyleFactory sf = CommonFactoryFinder.getStyleFactory(null);
     FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2(null);
-	Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){
+        //Constructor
+    Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){
 		this.sources=sources;
         final MapContext map = new DefaultMapContext();
         //titulo de la ventana
@@ -47,8 +49,11 @@ class Mapa{
         map.addLayer(sources.get(1).getFeatureSource(),sources.get(1).getEstilo());
         map.addLayer(sources.get(2).getFeatureSource(),sources.get(2).getEstilo());
         //agrego un mapframe con sus propiedades
+         Icon animacion = new ImageIcon("/home/nilchu/Imagenes/animacion.gif");
+        JButton button2 = new JButton(animacion);
         frame = new JMapFrame(map);
         frame.setSize(600, 600);
+        frame.add(animacion);
         frame.enableStatusBar(false);
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
