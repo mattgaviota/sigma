@@ -49,8 +49,6 @@ class Mapa{
         map.addLayer(sources.get(1).getFeatureSource(),sources.get(1).getEstilo());
         map.addLayer(sources.get(2).getFeatureSource(),sources.get(2).getEstilo());
         //agrego un mapframe con sus propiedades
-         Icon animacion = new ImageIcon("/home/nilchu/Imagenes/animacion.gif");
-        JButton button2 = new JButton(animacion);
         frame = new JMapFrame(map);
         frame.setSize(600, 600);
         frame.add(animacion);
@@ -58,7 +56,7 @@ class Mapa{
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
         JToolBar toolBar = frame.getToolBar();
-        Icon InfoIcono = new ImageIcon("./information.gif");
+        Icon InfoIcono = new ImageIcon("./images/information.gif");
         JButton btn = new JButton(InfoIcono);
         toolBar.addSeparator();
         toolBar.add(btn);
