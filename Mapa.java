@@ -50,9 +50,10 @@ class Mapa{
         map.addLayer(sources.get(2).getFeatureSource(),sources.get(2).getEstilo());
         //agrego un mapframe con sus propiedades
         frame = new JMapFrame(map);
-        frame.setSize(600, 600);
-        frame.add(animacion);
+        frame.setSize(600, 400);
         frame.enableStatusBar(false);
+        frame.setResizable(false);
+        frame.setUndecorated(true);
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
         JToolBar toolBar = frame.getToolBar();
@@ -117,8 +118,9 @@ class Mapa{
 					popUp.getContentPane().add(panelImagen);
 					popUp.getContentPane().add(etiqueta);
 					popUp.pack();
-					popUp.setSize(500, 300);
+					//popUp.setSize(500, 300);
 					popUp.setVisible(true);
+                    popUp.setResizable(false);
 					}
 
 				} 

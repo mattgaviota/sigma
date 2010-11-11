@@ -11,11 +11,11 @@ import org.geotools.styling.*;
 
 
 public class Gis {
-	public static void main(String[] args) throws Exception {
+	public void muestra () throws Exception {
 		//ATENCION, la idea de todas las capas q cargo, es que se carguen
 		//en base al filtro, aplicado por la ventana hecha con Swing..
 		//osea q se cambiarian esas lineas de cargar los shp..
-		Mapa mapita;
+		Mapa mapita; 
 		AbstractGridCoverage2DReader reader ;
 		Estilos creadorEstilo = new Estilos();
 		Vector <Capa> capas = new Vector();
@@ -26,7 +26,7 @@ public class Gis {
 		File mapa;
 		//saco una capa, la convierto, en base a ella genero un estilo
 		//y con eso creo un objeto Capa con el featureSource y el estilo.
-		mapa = new File("./mapas/salta/lugares.shp");
+		mapa = new File("./shp/hoteles1.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource = store.getFeatureSource();
         estilo = creadorEstilo.estiloPunto(2,20,1);
@@ -34,26 +34,28 @@ public class Gis {
         capas.add(new Capa(featureSource,estilo));
         
         //lo mismo para otras capas
-        mapa = new File("./mapas/salta/lugares2.shp");
+        mapa = new File("./shp/iglesias.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource= store.getFeatureSource();
         estilo = creadorEstilo.estiloPunto(1,20,2);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
-        mapa = new File("./mapas/salta/lugares3.shp");
+        mapa = new File("./shp/turismo.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource = store.getFeatureSource();
         estilo = creadorEstilo.estiloPunto(4,20,4);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
+        
         //ahora la img de fondo 
-        File img = new File("./mapas/salta/mapasalta.png");
+        File img = new File("./mapas/salta/centrosalta.jpg");
         AbstractGridFormat format = GridFormatFinder.findFormat(img);        
         reader = format.getReader(img);
         estilo = creadorEstilo.RGB(reader); //para q sea con color
         //agrego esa capa al vector
+        
         
         
         //mando lo q quiero en el mapa
