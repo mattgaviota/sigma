@@ -17,8 +17,9 @@ import java.awt.event.ActionEvent;
  * The application's main frame.
  */
 public class GismaView extends FrameView {
+    //Atributos
+    private Gis sigma;
     
-        // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn2Buscar;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnNinguna;
@@ -52,13 +53,13 @@ public class GismaView extends FrameView {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel mainPanel;
-    // End of variables declaration//GEN-END:variables
+    
 
-
+    //Constructor
     public GismaView(SingleFrameApplication app) {
         
         super(app);
-
+        sigma  = new Gis();
         initComponents();
 
      
@@ -133,9 +134,9 @@ public class GismaView extends FrameView {
         cbHotel123.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbHotel123.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("Hotel123");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("Hotel123");
             }
         });
 
@@ -144,9 +145,9 @@ public class GismaView extends FrameView {
         cbHotel45.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbHotel45.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("Hotel45");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("Hotel45");
             }
         });
 
@@ -156,9 +157,9 @@ public class GismaView extends FrameView {
         cbIglesias.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbIglesias.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("Iglesias");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("Iglesias");
             }
         });
 
@@ -167,9 +168,9 @@ public class GismaView extends FrameView {
         cbMuseos.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbMuseos.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("Museos");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("Museos");
             }
         });
 
@@ -178,9 +179,9 @@ public class GismaView extends FrameView {
         cbRentACar.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbRentACar.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("RentACar");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("RentACar");
             }
         });
 
@@ -189,9 +190,9 @@ public class GismaView extends FrameView {
         cbTurismo.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cbTurismo.isSelected()){
-                    System.out.println("hola");
+                    sigma.toggleLayerVisibility("Turismo");
                 }
-                else System.out.println("chau");
+                else sigma.toggleLayerVisibility("Turismo");
             }
         });
 
@@ -205,8 +206,8 @@ public class GismaView extends FrameView {
         btnActualizar.addActionListener (new ActionListener (){
             public void actionPerformed (ActionEvent e){
                 try {
-                    Gis asd= new Gis();
-                    asd.muestra();
+                    
+                    sigma.updateMap();
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
@@ -220,7 +221,12 @@ public class GismaView extends FrameView {
         btnTodas.addActionListener (new ActionListener (){
             public void actionPerformed (ActionEvent e){
                 try {
-                    System.out.println("troz");
+                    cbHotel123.setSelected(true);
+                    cbHotel45.setSelected(true);
+                    cbIglesias.setSelected(true);
+                    cbMuseos.setSelected(true);
+                    cbTurismo.setSelected(true);
+                    cbRentACar.setSelected(true);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
@@ -235,7 +241,12 @@ public class GismaView extends FrameView {
         btnNinguna.addActionListener (new ActionListener (){
             public void actionPerformed (ActionEvent e){
                 try {
-                    System.out.println("troz");
+                    cbHotel123.setSelected(false);
+                    cbHotel45.setSelected(false);
+                    cbIglesias.setSelected(false);
+                    cbMuseos.setSelected(false);
+                    cbTurismo.setSelected(false);
+                    cbRentACar.setSelected(false);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
