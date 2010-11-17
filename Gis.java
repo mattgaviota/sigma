@@ -13,19 +13,16 @@ import org.geotools.styling.*;
 
 
 public class Gis {
+    Mapa mapita; 
+	AbstractGridCoverage2DReader reader ;
+	Estilos creadorEstilo = new Estilos();
+	Vector <Capa> capas = new Vector();
+	Capa capa;
+	Style estilo;
+	SimpleFeatureSource featureSource;
+	FileDataStore store;
+	File mapa;
 	public void muestra () throws Exception {
-		//ATENCION, la idea de todas las capas q cargo, es que se carguen
-		//en base al filtro, aplicado por la ventana hecha con Swing..
-		//osea q se cambiarian esas lineas de cargar los shp..
-		Mapa mapita; 
-		AbstractGridCoverage2DReader reader ;
-		Estilos creadorEstilo = new Estilos();
-		Vector <Capa> capas = new Vector();
-		Capa capa;
-		Style estilo;
-		SimpleFeatureSource featureSource;
-		FileDataStore store;
-		File mapa;
 		//saco una capa, la convierto, en base a ella genero un estilo
 		//y con eso creo un objeto Capa con el featureSource y el estilo.
 		mapa = new File("./shp/hoteles1.shp");
@@ -35,8 +32,31 @@ public class Gis {
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
+        mapa = new File("./shp/hoteles5.shp");
+		store = FileDataStoreFinder.getDataStore(mapa);
+        featureSource = store.getFeatureSource();
+        estilo = creadorEstilo.estiloPunto(2,20,1);
+        //agrego esa capa al vector
+        capas.add(new Capa(featureSource,estilo));
+        
         //lo mismo para otras capas
         mapa = new File("./shp/iglesias.shp");
+		store = FileDataStoreFinder.getDataStore(mapa);
+        featureSource= store.getFeatureSource();
+        estilo = creadorEstilo.estiloPunto(1,20,2);
+        //agrego esa capa al vector
+        capas.add(new Capa(featureSource,estilo));
+        
+        //lo mismo para otras capas
+        mapa = new File("./shp/rentcar.shp");
+		store = FileDataStoreFinder.getDataStore(mapa);
+        featureSource= store.getFeatureSource();
+        estilo = creadorEstilo.estiloPunto(1,20,2);
+        //agrego esa capa al vector
+        capas.add(new Capa(featureSource,estilo));
+        
+        //lo mismo para otras capas
+        mapa = new File("./shp/museos.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource= store.getFeatureSource();
         estilo = creadorEstilo.estiloPunto(1,20,2);
@@ -65,11 +85,17 @@ public class Gis {
 	}
     
     public void toggleLayerVisibility(String msje){
+        if (msje.equals("Hotel123")) {
+                if (mapita.getLayer(1).isVisible())
+                    mapita.getLayer(1).setVisible(false);
+                else mapita.getLayer(1).setVisible(true);
+            
+        }
         System.out.println(msje);
     }
     public void updateMap(){
         try {
-            this.muestra();
+            mapita.repaint();
         }
         catch (Exception ex){
             ex.printStackTrace();

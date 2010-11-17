@@ -78,6 +78,12 @@ public class GismaView extends FrameView {
     private void initComponents() {
         
         sigma  = new Gis();
+        try {
+            sigma.muestra();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
         parametros = new HashMap<String, String>();
         
         mainPanel = new javax.swing.JPanel();
@@ -230,6 +236,7 @@ public class GismaView extends FrameView {
                     cbMuseos.setSelected(true);
                     cbTurismo.setSelected(true);
                     cbRentACar.setSelected(true);
+                    btnActualizar.setEnabled(true);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
@@ -250,6 +257,7 @@ public class GismaView extends FrameView {
                     cbMuseos.setSelected(false);
                     cbTurismo.setSelected(false);
                     cbRentACar.setSelected(false);
+                    btnActualizar.setEnabled(false);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();

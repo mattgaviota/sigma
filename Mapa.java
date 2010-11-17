@@ -12,6 +12,7 @@ import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.map.DefaultMapContext;
 import org.geotools.map.MapContext;
+import org.geotools.map.MapLayer;
 import org.geotools.swing.JMapFrame;
 import javax.swing.JToolBar;
 import java.util.Vector;
@@ -32,6 +33,7 @@ import org.opengis.filter.FilterFactory2;
 
 class Mapa{
         //Atributos
+    MapContext map = new DefaultMapContext();
     JMapFrame frame;
 	Vector<Capa> sources;
 	StyleFactory sf = CommonFactoryFinder.getStyleFactory(null);
@@ -39,19 +41,19 @@ class Mapa{
         //Constructor
     Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){
 		this.sources=sources;
-        final MapContext map = new DefaultMapContext();
         //titulo de la ventana
         map.setTitle("Testing");
         //agrego mapa de fondo
         map.addLayer(reader,estilo);
-        //agrego las capas (sustituible con un for, cuando tengamos mas capas..)
-        map.addLayer(sources.get(0).getFeatureSource(),sources.get(0).getEstilo());
-        map.addLayer(sources.get(1).getFeatureSource(),sources.get(1).getEstilo());
-        map.addLayer(sources.get(2).getFeatureSource(),sources.get(2).getEstilo());
+        for(Capa layer : sources)
+            map.addLayer(layer.getFeatureSource(),layer.getEstilo());
+        for(MapLayer layerMap : map.getLayers())
+            layerMap.setVisible(false);
+        map.getLayer(0).setVisible(true);
         //agrego un mapframe con sus propiedades
         frame = new JMapFrame(map);
         frame.setSize(600, 400);
-        frame.enableStatusBar(false);
+        frame.enableStatusBar(false);   
         frame.setResizable(false);
         frame.setUndecorated(true);
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
@@ -127,11 +129,7 @@ class Mapa{
 				finally {
 					iter.close();
 				}
-/*
-				if (IDs.isEmpty()) {
-					System.out.println("   no feature selected");
-				}
-			*/
+
 			}
 			catch (Exception ex) {
 				ex.printStackTrace();
@@ -139,4 +137,13 @@ class Mapa{
 			}
 		}
 	}
+    
+    MapLayer getLayer(int pos){
+        return map.getLayer(pos);
+    }
+    
+    void repaint(){
+        frame.repaint();
+    }
+    
 }
