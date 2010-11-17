@@ -61,5 +61,17 @@ public class Gis {
         //mando lo q quiero en el mapa
 		mapita = new Mapa(capas,reader,estilo);
 	}
+    
+    public void toggleLayerVisibility(String msje){
+        System.out.println(msje);
+    }
+    public void updateMap(){
+        try {
+            this.muestra();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
 }
 
