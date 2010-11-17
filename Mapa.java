@@ -37,7 +37,7 @@ class Mapa{
 	StyleFactory sf = CommonFactoryFinder.getStyleFactory(null);
     FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2(null);
         //Constructor
-    Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){
+    Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){  //reader es el mapa y estilo es el estilo del mapa
 		this.sources=sources;
         final MapContext map = new DefaultMapContext();
         //titulo de la ventana
@@ -114,7 +114,7 @@ class Mapa{
 			        ImageIcon img = new ImageIcon("./fotos/marilian.jpeg");
 			        JLabel etiquetaImg = new JLabel(img);
 					panelImagen.add(etiquetaImg);
-					JLabel etiqueta = new JLabel("Lalala el luegar es: "+feature.getAttribute("name"));
+					JLabel etiqueta = new JLabel(" el luegar es: "+feature.getAttribute("name"));
 					popUp.getContentPane().add(panelImagen);
 					popUp.getContentPane().add(etiqueta);
 					popUp.pack();

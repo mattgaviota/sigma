@@ -37,23 +37,23 @@ public class GismaView extends FrameView {
     private javax.swing.JCheckBox cbMuseos;
     private javax.swing.JCheckBox cbRentACar;
     private javax.swing.JCheckBox cbTurismo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel lblLayersSelection;
+    private javax.swing.JLabel lblWebPage;
+    private javax.swing.JLabel lblSearch;
+    private javax.swing.JLabel lblFilters;
+    private javax.swing.JLabel lblSigma;
+    private javax.swing.JLabel lblMattsName;
+    private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblDieguitsName;
+    private javax.swing.JLabel lblNilsasName;
+    private javax.swing.JPanel panLayers;
+    private javax.swing.JPanel panSearch;
+    private javax.swing.JPanel panAbout;
+    private javax.swing.JPanel panAuthors;
+    private javax.swing.JPanel panSource;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JPanel mainPanel;
+    private javax.swing.JTextField SearchTextField;
+    private javax.swing.JPanel panMain;
     private javax.swing.JFrame probando;
 
     //Constructor
@@ -80,20 +80,20 @@ public class GismaView extends FrameView {
         sigma  = new Gis();
         parametros = new HashMap<String, String>();
         
-        mainPanel = new javax.swing.JPanel();
+        panMain = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        panLayers = new javax.swing.JPanel();
         cbHotel123 = new javax.swing.JCheckBox();
         cbHotel45 = new javax.swing.JCheckBox();
         cbIglesias = new javax.swing.JCheckBox();
         cbMuseos = new javax.swing.JCheckBox();
         cbRentACar = new javax.swing.JCheckBox();
         cbTurismo = new javax.swing.JCheckBox();
-        jLabel1 = new javax.swing.JLabel();
+        lblLayersSelection = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JButton();
         btnTodas = new javax.swing.JButton();
         btnNinguna = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        panSearch = new javax.swing.JPanel();
         cb2Hotel45 = new javax.swing.JCheckBox();
         cb2Hotel123 = new javax.swing.JCheckBox();
         cb2Iglesias = new javax.swing.JCheckBox();
@@ -101,36 +101,36 @@ public class GismaView extends FrameView {
         cb2RentAcar = new javax.swing.JCheckBox();
         cb2Museos = new javax.swing.JCheckBox();
         btn2Buscar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        SearchTextField = new javax.swing.JTextField();
+        lblSearch = new javax.swing.JLabel();
+        lblFilters = new javax.swing.JLabel();
+        panAbout = new javax.swing.JPanel();
+        lblSigma = new javax.swing.JLabel();
+        panAuthors = new javax.swing.JPanel();
+        lblDieguitsName = new javax.swing.JLabel();
+        lblMattsName = new javax.swing.JLabel();
+        lblNilsasName = new javax.swing.JLabel();
+        lblLogo = new javax.swing.JLabel();
+        panSource = new javax.swing.JPanel();
+        lblWebPage = new javax.swing.JLabel();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(GismaApp.class).getContext().getResourceMap(GismaView.class);
-        mainPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, resourceMap.getColor("mainPanel.border.matteColor"))); // NOI18N
-        mainPanel.setMaximumSize(new java.awt.Dimension(900, 200));
-        mainPanel.setMinimumSize(new java.awt.Dimension(900, 200));
-        mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(new java.awt.Dimension(900, 200));
-        mainPanel.setRequestFocusEnabled(false);
+        panMain.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, resourceMap.getColor("panMain.border.matteColor"))); // NOI18N
+        panMain.setMaximumSize(new java.awt.Dimension(900, 200));
+        panMain.setMinimumSize(new java.awt.Dimension(900, 200));
+        panMain.setName("panMain"); // NOI18N
+        panMain.setPreferredSize(new java.awt.Dimension(900, 200));
+        panMain.setRequestFocusEnabled(false);
 
-        jTabbedPane1.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
+        jTabbedPane1.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         jTabbedPane1.setName("jTabbedPane1"); // NOI18N
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(850, 190));
 
-        jPanel1.setAlignmentX(500.0F);
-        jPanel1.setAlignmentY(500.0F);
-        jPanel1.setName("jPanel1"); // NOI18N
-        jPanel1.setPreferredSize(new java.awt.Dimension(880, 160));
+        panLayers.setAlignmentX(500.0F);
+        panLayers.setAlignmentY(500.0F);
+        panLayers.setName("panLayers"); // NOI18N
+        panLayers.setPreferredSize(new java.awt.Dimension(880, 160));
 
         cbHotel123.setText(resourceMap.getString("cbHotel123.text")); // NOI18N
         cbHotel123.setName("cbHotel123"); // NOI18N
@@ -199,8 +199,8 @@ public class GismaView extends FrameView {
             }
         });
 
-        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
-        jLabel1.setName("jLabel1"); // NOI18N
+        lblLayersSelection.setText(resourceMap.getString("lblLayersSelection.text")); // NOI18N
+        lblLayersSelection.setName("lblLayersSelection"); // NOI18N
 
         btnActualizar.setIcon(resourceMap.getIcon("btnActualizar.icon")); // NOI18N
         btnActualizar.setText(resourceMap.getString("btnActualizar.text")); // NOI18N
@@ -259,8 +259,8 @@ public class GismaView extends FrameView {
         });
 
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(panLayers);
+        panLayers.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -281,13 +281,13 @@ public class GismaView extends FrameView {
                             .addComponent(btnTodas, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnNinguna, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLayersSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLayersSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -314,10 +314,10 @@ public class GismaView extends FrameView {
                 .addGap(25, 25, 25))
         );
 
-        jTabbedPane1.addTab(resourceMap.getString("jPanel1.TabConstraints.tabTitle"), jPanel1); // NOI18N
+        jTabbedPane1.addTab(resourceMap.getString("panLayers.TabConstraints.tabTitle"), panLayers); // NOI18N
 
-        jPanel2.setForeground(resourceMap.getColor("jPanel2.foreground")); // NOI18N
-        jPanel2.setName("jPanel2"); // NOI18N
+        panSearch.setForeground(resourceMap.getColor("panSearch.foreground")); // NOI18N
+        panSearch.setName("panSearch"); // NOI18N
 
         cb2Hotel45.setForeground(resourceMap.getColor("jCheckBox8.foreground")); // NOI18N
         cb2Hotel45.setText(resourceMap.getString("cb2Hotel45.text")); // NOI18N
@@ -429,7 +429,7 @@ public class GismaView extends FrameView {
         btn2Buscar.addActionListener (new ActionListener (){
             public void actionPerformed (ActionEvent e){
                 try {
-                    sigma.buscar(parametros, jTextField1.getText());
+                    sigma.buscar(parametros, SearchTextField.getText());
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
@@ -438,19 +438,19 @@ public class GismaView extends FrameView {
             }
         });
 
-        jTextField1.setText(resourceMap.getString("jTextField1.text")); // NOI18N
-        jTextField1.setName("jTextField1"); // NOI18N
+        SearchTextField.setText(resourceMap.getString("SearchTextField.text")); // NOI18N
+        SearchTextField.setName("SearchTextField"); // NOI18N
 
-        jLabel2.setForeground(resourceMap.getColor("jCheckBox8.foreground")); // NOI18N
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
+        lblSearch.setForeground(resourceMap.getColor("jCheckBox8.foreground")); // NOI18N
+        lblSearch.setText(resourceMap.getString("lblSearch.text")); // NOI18N
+        lblSearch.setName("lblSearch"); // NOI18N
 
-        jLabel3.setForeground(resourceMap.getColor("jCheckBox8.foreground")); // NOI18N
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
-        jLabel3.setName("jLabel3"); // NOI18N
+        lblFilters.setForeground(resourceMap.getColor("jCheckBox8.foreground")); // NOI18N
+        lblFilters.setText(resourceMap.getString("lblFilters.text")); // NOI18N
+        lblFilters.setName("lblFilters"); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(panSearch);
+        panSearch.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -459,7 +459,7 @@ public class GismaView extends FrameView {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(lblFilters)
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cb2Hotel123)
@@ -469,10 +469,10 @@ public class GismaView extends FrameView {
                                     .addComponent(cb2Hotel45)
                                     .addComponent(cb2Museos))
                                 .addGap(80, 80, 80))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(63, 63, 63))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cb2Turismo)
@@ -486,7 +486,7 @@ public class GismaView extends FrameView {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(lblSearch)
                 .addContainerGap(140, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(25, Short.MAX_VALUE)
@@ -498,7 +498,7 @@ public class GismaView extends FrameView {
                         .addGap(18, 18, 18)
                         .addComponent(cb2Turismo))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -508,127 +508,127 @@ public class GismaView extends FrameView {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cb2Hotel123)
-                                    .addComponent(jLabel3))
+                                    .addComponent(lblFilters))
                                 .addGap(18, 18, 18)
                                 .addComponent(cb2RentAcar)))))
                 .addGap(32, 32, 32))
         );
 
-        jTabbedPane1.addTab(resourceMap.getString("jPanel2.TabConstraints.tabTitle"), jPanel2); // NOI18N
+        jTabbedPane1.addTab(resourceMap.getString("panSearch.TabConstraints.tabTitle"), panSearch); // NOI18N
 
-        jPanel3.setName("jPanel3"); // NOI18N
+        panAbout.setName("panAbout"); // NOI18N
 
-        jLabel4.setFont(resourceMap.getFont("jLabel4.font")); // NOI18N
-        jLabel4.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
-        jLabel4.setName("jLabel4"); // NOI18N
+        lblSigma.setFont(resourceMap.getFont("lblSigma.font")); // NOI18N
+        lblSigma.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        lblSigma.setText(resourceMap.getString("lblSigma.text")); // NOI18N
+        lblSigma.setName("lblSigma"); // NOI18N
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), resourceMap.getString("jPanel4.border.title"), javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP)); // NOI18N
-        jPanel4.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jPanel4.setName("jPanel4"); // NOI18N
+        panAuthors.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), resourceMap.getString("panAuthors.border.title"), javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP)); // NOI18N
+        panAuthors.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        panAuthors.setName("panAuthors"); // NOI18N
 
-        jLabel8.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
-        jLabel8.setName("jLabel8"); // NOI18N
+        lblDieguitsName.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        lblDieguitsName.setText(resourceMap.getString("lblDieguitsName.text")); // NOI18N
+        lblDieguitsName.setName("lblDieguitsName"); // NOI18N
 
-        jLabel6.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
-        jLabel6.setName("jLabel6"); // NOI18N
+        lblMattsName.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        lblMattsName.setText(resourceMap.getString("lblMattsName.text")); // NOI18N
+        lblMattsName.setName("lblMattsName"); // NOI18N
 
-        jLabel9.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
-        jLabel9.setName("jLabel9"); // NOI18N
+        lblNilsasName.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        lblNilsasName.setText(resourceMap.getString("lblNilsasName.text")); // NOI18N
+        lblNilsasName.setName("lblNilsasName"); // NOI18N
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(panAuthors);
+        panAuthors.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
+                    .addComponent(lblNilsasName)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblMattsName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(15, 15, 15))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addComponent(lblDieguitsName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel8)
+                .addComponent(lblDieguitsName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(lblMattsName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addComponent(lblNilsasName)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        jLabel7.setIcon(resourceMap.getIcon("jLabel7.icon")); // NOI18N
-        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
-        jLabel7.setName("jLabel7"); // NOI18N
+        lblLogo.setIcon(resourceMap.getIcon("lblLogo.icon")); // NOI18N
+        lblLogo.setText(resourceMap.getString("lblLogo.text")); // NOI18N
+        lblLogo.setName("lblLogo"); // NOI18N
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), resourceMap.getString("jPanel5.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP)); // NOI18N
-        jPanel5.setName("jPanel5"); // NOI18N
+        panSource.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), resourceMap.getString("panSource.border.title"), javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP)); // NOI18N
+        panSource.setName("panSource"); // NOI18N
 
-        jLabel10.setForeground(resourceMap.getColor("jLabel9.foreground")); // NOI18N
-        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
-        jLabel10.setName("jLabel10"); // NOI18N
+        lblWebPage.setForeground(resourceMap.getColor("lblNilsasName.foreground")); // NOI18N
+        lblWebPage.setText(resourceMap.getString("lblWebPage.text")); // NOI18N
+        lblWebPage.setName("lblWebPage"); // NOI18N
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(panSource);
+        panSource.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel10)
+                .addComponent(lblWebPage)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblWebPage, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(panAbout);
+        panAbout.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(268, 268, 268)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+                .addComponent(lblSigma, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panAuthors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(lblLogo)
                 .addGap(105, 105, 105)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panSource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSigma, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(panAuthors, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panSource, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab(resourceMap.getString("jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
+        jTabbedPane1.addTab(resourceMap.getString("panAbout.TabConstraints.tabTitle"), panAbout); // NOI18N
 
-        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
-        mainPanel.setLayout(mainPanelLayout);
+        javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(panMain);
+        panMain.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPanelLayout.createSequentialGroup()
@@ -644,7 +644,7 @@ public class GismaView extends FrameView {
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        setComponent(mainPanel);
+        setComponent(panMain);
         
     }
 

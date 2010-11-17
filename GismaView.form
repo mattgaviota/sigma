@@ -2,12 +2,12 @@
 
 <Form version="1.5" maxVersion="1.7">
   <NonVisualComponents>
-    <Container class="javax.swing.JPanel" name="mainPanel">
+    <Container class="javax.swing.JPanel" name="panMain">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
             <MatteColorBorder>
-              <Property name="color" resourceKey="mainPanel.border.matteColor"/>
+              <Property name="color" resourceKey="panMain.border.matteColor"/>
             </MatteColorBorder>
           </Border>
         </Property>
@@ -17,7 +17,7 @@
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[900, 200]"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="mainPanel" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="panMain" noResource="true"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[900, 200]"/>
         </Property>
@@ -47,7 +47,7 @@
       <SubComponents>
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
+            <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
             <Property name="tabPlacement" type="int" value="2"/>
             <Property name="name" type="java.lang.String" value="jTabbedPane1" noResource="true"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -57,11 +57,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel1">
+            <Container class="javax.swing.JPanel" name="panLayers">
               <Properties>
                 <Property name="alignmentX" type="float" value="500.0"/>
                 <Property name="alignmentY" type="float" value="500.0"/>
-                <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="panLayers" noResource="true"/>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[880, 160]"/>
                 </Property>
@@ -69,7 +69,7 @@
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Capas">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="jPanel1.TabConstraints.tabTitle"/>
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="panLayers.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -99,7 +99,7 @@
                                       <Component id="btnActualizar" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="jLabel1" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                              <Component id="lblLayersSelection" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
@@ -108,7 +108,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Component id="lblLayersSelection" min="-2" pref="36" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
@@ -181,10 +181,10 @@
                     <Property name="name" type="java.lang.String" value="cbTurismo" noResource="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel1">
+                <Component class="javax.swing.JLabel" name="lblLayersSelection">
                   <Properties>
-                    <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
-                    <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+                    <Property name="text" type="java.lang.String" resourceKey="lblLayersSelection.text"/>
+                    <Property name="name" type="java.lang.String" value="lblLayersSelection" noResource="true"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnActualizar">
@@ -211,15 +211,15 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel2">
+            <Container class="javax.swing.JPanel" name="panSearch">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" resourceKey="jPanel2.foreground"/>
-                <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+                <Property name="foreground" type="java.awt.Color" resourceKey="panSearch.foreground"/>
+                <Property name="name" type="java.lang.String" value="panSearch" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Busqueda">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="jPanel2.TabConstraints.tabTitle"/>
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="panSearch.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -233,7 +233,7 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblFilters" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="cb2Hotel123" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -246,12 +246,12 @@
                                           </Group>
                                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jLabel2" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Component id="lblSearch" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="428" max="-2" attributes="1"/>
+                                  <Component id="SearchTextField" min="-2" pref="428" max="-2" attributes="1"/>
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -271,7 +271,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSearch" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="140" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -285,7 +285,7 @@
                                   <Component id="cb2Turismo" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jTextField1" min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="SearchTextField" min="-2" pref="25" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -296,7 +296,7 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="cb2Hotel123" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblFilters" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="cb2RentAcar" min="-2" max="-2" attributes="0"/>
@@ -354,34 +354,34 @@
                     <Property name="name" type="java.lang.String" value="btnBuscar" noResource="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
+                <Component class="javax.swing.JTextField" name="SearchTextField">
                   <Properties>
-                    <Property name="text" type="java.lang.String" resourceKey="jTextField1.text"/>
-                    <Property name="name" type="java.lang.String" value="jTextField1" noResource="true"/>
+                    <Property name="text" type="java.lang.String" resourceKey="SearchTextField.text"/>
+                    <Property name="name" type="java.lang.String" value="SearchTextField" noResource="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="lblSearch">
                   <Properties>
-                    <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
-                    <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
+                    <Property name="text" type="java.lang.String" resourceKey="lblSearch.text"/>
+                    <Property name="name" type="java.lang.String" value="lblSearch" noResource="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="lblFilters">
                   <Properties>
-                    <Property name="text" type="java.lang.String" resourceKey="jLabel3.text"/>
-                    <Property name="name" type="java.lang.String" value="jLabel3" noResource="true"/>
+                    <Property name="text" type="java.lang.String" resourceKey="lblFilters.text"/>
+                    <Property name="name" type="java.lang.String" value="lblFilters" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel3">
+            <Container class="javax.swing.JPanel" name="panAbout">
               <Properties>
-                <Property name="name" type="java.lang.String" value="jPanel3" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="panAbout" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Acerca de">
-                    <Property name="tabTitle" type="java.lang.String" resourceKey="jPanel3.TabConstraints.tabTitle"/>
+                    <Property name="tabTitle" type="java.lang.String" resourceKey="panAbout.TabConstraints.tabTitle"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -391,16 +391,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
-                          <Component id="jLabel4" pref="496" max="32767" attributes="0"/>
+                          <Component id="lblSigma" pref="496" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="panAuthors" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="100" max="32767" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblLogo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                          <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="panSource" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -409,14 +409,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="lblSigma" min="-2" pref="31" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jPanel4" alignment="0" max="32767" attributes="1"/>
-                                  <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="1"/>
+                                  <Component id="panAuthors" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="panSource" alignment="0" min="-2" max="-2" attributes="1"/>
                               </Group>
-                              <Component id="jLabel7" min="-2" pref="96" max="-2" attributes="1"/>
+                              <Component id="lblLogo" min="-2" pref="96" max="-2" attributes="1"/>
                           </Group>
                           <EmptySpace pref="18" max="32767" attributes="0"/>
                       </Group>
@@ -424,15 +424,15 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="lblSigma">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" resourceKey="jLabel4.font"/>
-                    <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                    <Property name="text" type="java.lang.String" resourceKey="jLabel4.text"/>
-                    <Property name="name" type="java.lang.String" value="jLabel4" noResource="true"/>
+                    <Property name="font" type="java.awt.Font" resourceKey="lblSigma.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="lblSigma.text"/>
+                    <Property name="name" type="java.lang.String" value="lblSigma" noResource="true"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="jPanel4">
+                <Container class="javax.swing.JPanel" name="panAuthors">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -440,12 +440,12 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                             <LineBorder roundedCorners="true"/>
                           </Border>
-                          <Property name="titleX" resourceKey="jPanel4.border.title"/>
+                          <Property name="titleX" resourceKey="panAuthors.border.title"/>
                         </TitledBorder>
                       </Border>
                     </Property>
-                    <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                    <Property name="name" type="java.lang.String" value="jPanel4" noResource="true"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                    <Property name="name" type="java.lang.String" value="panAuthors" noResource="true"/>
                   </Properties>
 
                   <Layout>
@@ -454,13 +454,13 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNilsasName" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel6" max="32767" attributes="0"/>
+                                      <Component id="lblMattsName" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDieguitsName" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace pref="45" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -471,48 +471,48 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblDieguitsName" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblMattsName" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblNilsasName" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="19" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel8">
+                    <Component class="javax.swing.JLabel" name="lblDieguitsName">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                        <Property name="text" type="java.lang.String" resourceKey="jLabel8.text"/>
-                        <Property name="name" type="java.lang.String" value="jLabel8" noResource="true"/>
+                        <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                        <Property name="text" type="java.lang.String" resourceKey="lblDieguitsName.text"/>
+                        <Property name="name" type="java.lang.String" value="lblDieguitsName" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel6">
+                    <Component class="javax.swing.JLabel" name="lblMattsName">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                        <Property name="text" type="java.lang.String" resourceKey="jLabel6.text"/>
-                        <Property name="name" type="java.lang.String" value="jLabel6" noResource="true"/>
+                        <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                        <Property name="text" type="java.lang.String" resourceKey="lblMattsName.text"/>
+                        <Property name="name" type="java.lang.String" value="lblMattsName" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel9">
+                    <Component class="javax.swing.JLabel" name="lblNilsasName">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                        <Property name="text" type="java.lang.String" resourceKey="jLabel9.text"/>
-                        <Property name="name" type="java.lang.String" value="jLabel9" noResource="true"/>
+                        <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                        <Property name="text" type="java.lang.String" resourceKey="lblNilsasName.text"/>
+                        <Property name="name" type="java.lang.String" value="lblNilsasName" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="lblLogo">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" resourceKey="jLabel7.icon"/>
-                    <Property name="text" type="java.lang.String" resourceKey="jLabel7.text"/>
-                    <Property name="name" type="java.lang.String" value="jLabel7" noResource="true"/>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="lblLogo.icon"/>
+                    <Property name="text" type="java.lang.String" resourceKey="lblLogo.text"/>
+                    <Property name="name" type="java.lang.String" value="lblLogo" noResource="true"/>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JPanel" name="jPanel5">
+                <Container class="javax.swing.JPanel" name="panSource">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -520,11 +520,11 @@
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                             <LineBorder/>
                           </Border>
-                          <Property name="titleX" resourceKey="jPanel5.border.title"/>
+                          <Property name="titleX" resourceKey="panSource.border.title"/>
                         </TitledBorder>
                       </Border>
                     </Property>
-                    <Property name="name" type="java.lang.String" value="jPanel5" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="panSource" noResource="true"/>
                   </Properties>
 
                   <Layout>
@@ -532,7 +532,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblWebPage" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="28" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -541,18 +541,18 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="21" max="32767" attributes="0"/>
-                              <Component id="jLabel10" min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="lblWebPage" min="-2" pref="33" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="jLabel10">
+                    <Component class="javax.swing.JLabel" name="lblWebPage">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" resourceKey="jLabel9.foreground"/>
-                        <Property name="text" type="java.lang.String" resourceKey="jLabel10.text"/>
-                        <Property name="name" type="java.lang.String" value="jLabel10" noResource="true"/>
+                        <Property name="foreground" type="java.awt.Color" resourceKey="lblNilsasName.foreground"/>
+                        <Property name="text" type="java.lang.String" resourceKey="lblWebPage.text"/>
+                        <Property name="name" type="java.lang.String" value="lblWebPage" noResource="true"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -566,7 +566,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="component" type="javax.swing.JComponent" editor="org.netbeans.modules.form.ComponentChooserEditor">
-      <ComponentRef name="mainPanel"/>
+      <ComponentRef name="panMain"/>
     </Property>
   </Properties>
   <AuxValues>
