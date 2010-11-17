@@ -54,16 +54,16 @@ public class GismaView extends FrameView {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel mainPanel;
-    
+    private javax.swing.JFrame probando;
 
     //Constructor
     public GismaView(SingleFrameApplication app) {
-        
+     
         super(app);
-        
+      
         initComponents();
 
-     
+        probando= app.getMainFrame();
     }
 
     
