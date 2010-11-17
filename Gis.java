@@ -1,4 +1,6 @@
 import java.util.Vector;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.io.File;
 import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
 import org.geotools.coverage.grid.io.AbstractGridFormat;
@@ -71,6 +73,14 @@ public class Gis {
         }
         catch (Exception ex){
             ex.printStackTrace();
+        }
+    }
+    public void buscar(HashMap params, String buscado){
+        Iterator iterador = params.keySet().iterator();
+        Object key; 
+        while (iterador.hasNext()) {
+            key = iterador.next();
+            System.out.println(params.get(key) + buscado);
         }
     }
 }

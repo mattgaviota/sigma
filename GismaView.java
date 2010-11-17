@@ -78,7 +78,7 @@ public class GismaView extends FrameView {
     private void initComponents() {
         
         sigma  = new Gis();
-        
+        parametros = new HashMap<String, String>();
         
         mainPanel = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -325,9 +325,13 @@ public class GismaView extends FrameView {
         cb2Hotel45.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Hotel45.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2Hotel45","Hotel45");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2Hotel45")){
+                        parametros.remove("cb2Hotel45");
+                    }
+                }
             }
         });
 
@@ -337,9 +341,13 @@ public class GismaView extends FrameView {
         cb2Hotel123.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Hotel123.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2Hotel123","Hotel123");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2Hotel123")){
+                        parametros.remove("cb2Hotel123");
+                    }
+                }
             }
         });
 
@@ -349,9 +357,13 @@ public class GismaView extends FrameView {
         cb2Iglesias.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Iglesias.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2Iglesias","Iglesias");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2Iglesias")){
+                        parametros.remove("cb2Iglesias");
+                    }
+                }
             }
         });
 
@@ -363,9 +375,13 @@ public class GismaView extends FrameView {
         cb2Turismo.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Turismo.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2Turismo","Turismo");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2Turismo")){
+                        parametros.remove("cb2Turismo");
+                    }
+                }
             }
         });
 
@@ -377,9 +393,13 @@ public class GismaView extends FrameView {
         cb2RentAcar.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2RentAcar.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2RentAcar","RentAcar");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2RentAcar")){
+                        parametros.remove("cb2RentAcar");
+                    }
+                }
             }
         });
 
@@ -391,9 +411,13 @@ public class GismaView extends FrameView {
         cb2Museos.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Museos.isSelected()){
-                    System.out.println("hola");
+                    parametros.put("cb2Museos","Museos");
                 }
-                else System.out.println("chau");
+                else {
+                    if (parametros.containsKey("cb2Museos")){
+                        parametros.remove("cb2Museos");
+                    }
+                }
             }
         });
 
@@ -405,7 +429,7 @@ public class GismaView extends FrameView {
         btn2Buscar.addActionListener (new ActionListener (){
             public void actionPerformed (ActionEvent e){
                 try {
-                    System.out.println("troz");
+                    sigma.buscar(parametros, jTextField1.getText());
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
