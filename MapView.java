@@ -33,26 +33,36 @@ import org.geotools.geometry.jts.ReferencedEnvelope;
 import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory2;
 
+/**   
+*     MapView Class: In this class we set the MapFrame with all its features.
+*   @author Gil-Novoa-Sarmiento
+*/
 
-class MapView{
+public class MapView{
         //Attributes
-    private MapContext Map = new DefaultMapContext();
     private JMapFrame MapFrame;
+    private MapContext Map = new DefaultMapContext();
 	private Vector<Layer> VectorOfLayers;
     private FilterFactory2 filterFactory = CommonFactoryFinder.getFilterFactory2(null);
         
+/**   
+*     MapView Constructor
+*   @param VectorOfLayers  Vector of layers
+*   @param BackgroundImage A png image
+*   @param style An image style
+*/   
         //Constructor
-   public MapView(Vector<Layer> VectorOfLayers,AbstractGridCoverage2DReader reader,Style estilo){  
+   public MapView(Vector<Layer> VectorOfLayers,AbstractGridCoverage2DReader BackgroundImage,Style style){  
 		this.VectorOfLayers=VectorOfLayers;
         Map.setTitle("Sigma");
         //this method adds the georeferenced image in the background
-        Map.addLayer(reader,estilo);
+        Map.addLayer(BackgroundImage,style);
         for(Layer layer : VectorOfLayers)
             Map.addLayer(layer.getFeatureSource(),layer.getStyle());
         for(MapLayer layerMap : Map.getLayers())
             layerMap.setVisible(false);
         Map.getLayer(0).setVisible(true);
-        //We add a MapFrame with all his features
+        //We add a MapFrame with all its features
         MapFrame = new JMapFrame(Map);
         MapFrame.setSize(600, 400);
         MapFrame.enableStatusBar(false);   
@@ -84,7 +94,11 @@ class MapView{
         //In this method the visibility of the map is changed so We're able to see the map
         MapFrame.setVisible(true);
 	}
-	
+/**  
+*      ShowInformation Method: This method shows a pop up with all the information of the selected point
+*    @param ev A clicked event
+*/
+
 	public void ShowInformation(MapMouseEvent ev) {
         //We make a 20x20 mm rectangle wich is the radio in where we are able click in 
 		Point screenPos = ev.getPoint();
@@ -131,24 +145,33 @@ class MapView{
 			}
 		}
 	}
-    /*  this method returns the layer we need by sending the position, according to the following agreement
-        * Agreement:
-		 * 1 = hoteles 1,2,3 *
-		 * 2 = hoteles 4,5 *
-		 * 3 = iglesias
-		 * 4 = rentcar
-		 * 5 = museos
-		 * 6 = turismo
-    */
+/**         getLayer Method: this method returns the layer we need by sending the position, according to the following agreement
+*       Agreement:
+*       1 = hoteles 1,2,3 *
+*       2 = hoteles 4,5 *
+*       3 = iglesias
+*       4 = rentcar
+*       5 = museos
+*       6 = turismo
+* 
+*    @param pos Integer
+*    @return MapLayer
+*/
     public MapLayer getLayer(int pos){
         return Map.getLayer(pos);
     }
-    //this method uploads all the visible layers 
+/**    
+*  Repaint Method: this method uploads all the visible layers 
+*/
     public void repaint(){
         MapFrame.repaint();
     }
     
-    //this 
+/**    
+*     setEnabled Method: this method sets 
+*   @param id integer
+*   @param cond boolean
+*/
     public void setEnabled(int id,boolean cond){
 		id-=1;
 		VectorOfLayers.get(id).setEnabled(cond);

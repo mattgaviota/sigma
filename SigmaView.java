@@ -17,7 +17,8 @@ import java.util.HashMap;
 
 
 /**
- * The application's main frame.
+ *      SigmaView Class: The application's graphic interface.
+ *    @author Gil-Novoa-Sarmiento
  */
 
 public class SigmaView extends FrameView {
@@ -59,6 +60,10 @@ public class SigmaView extends FrameView {
     private  JPanel panMain;
     private  JPanel probando;
 
+/**
+*       SigmaView Constructor 
+*     @param app SingleFrameApplication       
+*/
     //Constructor
     public SigmaView(SingleFrameApplication app) {
         
@@ -70,16 +75,18 @@ public class SigmaView extends FrameView {
 
     
 
-    /** This method is called from within the constructor to
-     * initialize the form.
-     */
+    // This method is called from within the constructor to initialize the form.
+     
     @SuppressWarnings("unchecked")
     
+/**
+*       initComponents Method: Main method in charge of set: buttons, checkboxes, labels and panels for the graphic interface  
+*/     
     private void initComponents() {
         
         sigma  = new Gis();
         try {
-            sigma.muestra();
+            sigma.Shows();
         }
         catch (Exception ex){
             ex.printStackTrace();

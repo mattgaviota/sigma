@@ -10,7 +10,11 @@ import org.geotools.data.FileDataStore;
 import org.geotools.data.FileDataStoreFinder;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.styling.*;
-
+ 
+/**
+*      Gis Class: This class is in charge of show and update the map with its layers. Also searchs a point specified by parameters.
+*   @author Gil-Novoa-Sarmiento
+*/
 
 
 public class Gis {
@@ -24,9 +28,11 @@ public class Gis {
 	private FileDataStore Store;
 	private File FileMap;
         
-        
+/**
+*      Shows Method Puts inside a MapView the background image and all its layers.
+*/
         //Methods    
-    public void muestra () throws Exception {
+    public void Shows () throws Exception {
         //in the variable FileMap we open an shp file in order to convert it into a Layer, this convertion requests an style and features
         //saved in the variables style and featureSource
 		FileMap = new File("./shp/hoteles1.shp");
@@ -88,15 +94,15 @@ public class Gis {
 		mapita = new MapView(VectorOfLayers,BackgroundImage,style);
 	}
 
-	/*
-		 * Agreement:
-		 * 1 = hoteles 1,2,3 *
-		 * 2 = hoteles 4,5 *
-		 * 3 = iglesias
-		 * 4 = rentcar
-		 * 5 = museos
-		 * 6 = turismo
-    */
+/**     toggleLayerVisibility Method sets the visibility of a layer specificied by an integer.
+     * Agreement:
+     * 1 = hoteles 1,2,3 *
+	 * 2 = hoteles 4,5 *
+	 * 3 = iglesias
+	 * 4 = rentcar
+	 * 5 = museos
+	 * 6 = turismo
+*/
 		
     public void toggleLayerVisibility(int id){
 	
@@ -110,12 +116,13 @@ public class Gis {
 			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
 			mapita.getLayer(id).setVisible(true);        
 			mapita.setEnabled(id,true);
-			//System.out.println(id+"cambioasdasd-"+mapita.getLayer(id).isVisible());
 		}
-		//System.out.println(msje);
+		
 	}
     
-    
+/**
+*       updateMap Method 
+*/
     public void updateMap(){
         try {
             mapita.repaint();
@@ -125,6 +132,11 @@ public class Gis {
         }
     }
     
+/**
+*       Search Method Searchs a point
+*     @param params  HashMap
+*     @param buscado A String
+*/ 
     public void Search(HashMap params, String buscado){
         Iterator iterador = params.keySet().iterator();
         Object key; 
