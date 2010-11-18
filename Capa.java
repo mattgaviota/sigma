@@ -6,7 +6,9 @@ class Capa{
 	SimpleFeatureSource fs ;
 	Style est ;
 	String geometryAttributeName;
-	Capa(SimpleFeatureSource fs ,	Style est){
+	boolean enabled;
+	Capa(SimpleFeatureSource fs,Style est){
+		enabled=false;
 		this.fs=fs;
 		this.est=est;
 		//estas 2 lineas meten en el atributo geometryAttributeName 
@@ -22,6 +24,12 @@ class Capa{
 	}
 	String getGeometry(){
 		return geometryAttributeName;
+	}
+	void setEnabled(boolean cond){
+		enabled=cond;
+	}
+	boolean getEnabled(){
+		return enabled;
 	}
 	
 }

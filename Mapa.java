@@ -70,14 +70,6 @@ class Mapa{
         toolBar.addSeparator();
         toolBar.add(btn);
 
-        /*
-         * When the user clicks the button we want to enable
-         * our custom feature selection tool. Since the only
-         * mouse action we are intersted in is 'clicked', and
-         * we are not creating control icons or cursors here,
-         * we can just create our tool as an anonymous sub-class
-         * of CursorTool.
-         */
         btn.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
@@ -102,44 +94,39 @@ class Mapa{
         AffineTransform screenToWorld = frame.getMapPane().getScreenToWorldTransform();
         Rectangle2D worldRect = screenToWorld.createTransformedShape(screenRect).getBounds2D();
         ReferencedEnvelope bbox = new ReferencedEnvelope( worldRect, frame.getMapContext().getCoordinateReferenceSystem());
-        //por cada capa del mapa...
+        //por cada capa del mapa que este habilitada (visible)...
         for(Capa lay:sources){
-			//...intersecto donde se hizo click, por la poscicion donde esta algun objeto
-			Filter filter = ff.intersects(ff.property(lay.getGeometry()), ff.literal(bbox));
-			try {
-				SimpleFeatureCollection selectedFeatures = lay.getFeatureSource().getFeatures(filter);
-
-				SimpleFeatureIterator iter = selectedFeatures.features();
-				//Set<FeatureId> IDs = new HashSet<FeatureId>();
+			if(lay.getEnabled()){
+				//...intersecto donde se hizo click, por la poscicion donde esta algun objeto
+				Filter filter = ff.intersects(ff.property(lay.getGeometry()), ff.literal(bbox));
 				try {
-					while (iter.hasNext()) {
-                    SimpleFeature feature = iter.next();
-                    //IDs.add(feature.getIdentifier());
-                    System.out.println("Se muestra info de:" + feature.getIdentifier());
-                    JFrame popUp = new JFrame("Info de: "+feature.getAttribute("name"));
-                    popUp.getContentPane().setLayout(new GridLayout(1, 2));
-			        JPanel panelImagen = new JPanel(new FlowLayout());
-			        ImageIcon img = new ImageIcon("./fotos/marilian.jpeg");
-			        JLabel etiquetaImg = new JLabel(img);
-					panelImagen.add(etiquetaImg);
-					JLabel etiqueta = new JLabel(" el lugar es: "+feature.getAttribute("name"));
-					popUp.getContentPane().add(panelImagen);
-					popUp.getContentPane().add(etiqueta);
-					popUp.pack();
-					//popUp.setSize(500, 300);
-					popUp.setVisible(true);
-                    popUp.setResizable(false);
-					}
-
-				} 
-				finally {
-					iter.close();
+					SimpleFeatureCollection selectedFeatures = lay.getFeatureSource().getFeatures(filter);
+					SimpleFeatureIterator iter = selectedFeatures.features();
+					try {
+						while (iter.hasNext()) {
+							SimpleFeature feature = iter.next();
+							System.out.println("Se muestra info de:" + lay.getEnabled());
+							JFrame popUp = new JFrame("Info de: "+feature.getAttribute("name"));
+							popUp.getContentPane().setLayout(new GridLayout(1, 2));
+							JPanel panelImagen = new JPanel(new FlowLayout());
+							ImageIcon img = new ImageIcon("./fotos/marilian.jpeg");
+							JLabel etiquetaImg = new JLabel(img);
+							panelImagen.add(etiquetaImg);
+							JLabel etiqueta = new JLabel(" el lugar es: "+feature.getAttribute("name"));
+							popUp.getContentPane().add(panelImagen);
+							popUp.getContentPane().add(etiqueta);
+							popUp.pack();
+							//popUp.setSize(500, 300);
+							popUp.setVisible(true);
+							popUp.setResizable(false);
+						}
+					} 
+					finally	{ iter.close(); }
 				}
-
-			}
-			catch (Exception ex) {
-				ex.printStackTrace();
-				return;
+				catch (Exception ex) {
+					ex.printStackTrace();
+					return;
+				}
 			}
 		}
 	}
@@ -151,5 +138,11 @@ class Mapa{
     void repaint(){
         frame.repaint();
     }
+    
+    void setEnabled(int id,boolean cond){
+		id-=1;
+		sources.get(id).setEnabled(cond);
+		System.out.println(id+"chilla-"+sources.get(id).getEnabled());
+	}
     
 }

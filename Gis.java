@@ -72,37 +72,16 @@ public class Gis {
         
         
         //ahora la img de fondo 
-        File img = new File("./mapas/salta/centrosalta.jpg");
+        File img = new File("./mapas/mapasalta.png");
         AbstractGridFormat format = GridFormatFinder.findFormat(img);        
         reader = format.getReader(img);
         estilo = creadorEstilo.RGB(reader); //para q sea con color
         //agrego esa capa al vector
-        
-        
-        
+
         //mando lo q quiero en el mapa
 		mapita = new Mapa(capas,reader,estilo);
 	}
-    
-    public void toggleLayerVisibility(String msje){
-        /*if (msje.equals("Hotel123")) {
-			if (mapita.getLayer(1).isVisible())
-				mapita.getLayer(1).setVisible(false);
-			else mapita.getLayer(1).setVisible(true);
-        }
-        if (msje.equals("Hotel45")) {
-			if (mapita.getLayer(2).isVisible())
-				mapita.getLayer(2).setVisible(false);
-			else mapita.getLayer(2).setVisible(true);           
-        }
-        if (msje.equals("Hotel45")) {
-			if (mapita.getLayer(2).isVisible())
-				mapita.getLayer(2).setVisible(false);
-			else mapita.getLayer(2).setVisible(true);           
-        }
-        * me hiba a morir haciendo IF  ¬¬  */
-        System.out.println(msje);
-    }
+
     public void toggleLayerVisibility(int id){
 		/*
 		 * Por Convencion:
@@ -113,9 +92,18 @@ public class Gis {
 		 * 5 = museos
 		 * 6 = turismo
 		 */
-		if (mapita.getLayer(id).isVisible())
-				mapita.getLayer(id).setVisible(false);
-			else mapita.getLayer(id).setVisible(true);        
+		if (mapita.getLayer(id).isVisible()){
+			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
+			mapita.getLayer(id).setVisible(false);
+			mapita.setEnabled(id,false);
+			System.out.println(id+"cambio-"+mapita.getLayer(id).isVisible());
+		}
+		else {
+			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
+			mapita.getLayer(id).setVisible(true);        
+			mapita.setEnabled(id,true);
+			//System.out.println(id+"cambioasdasd-"+mapita.getLayer(id).isVisible());
+		}
 		//System.out.println(msje);
 	}
     public void updateMap(){
