@@ -58,11 +58,11 @@ public class GismaView extends FrameView {
 
     //Constructor
     public GismaView(SingleFrameApplication app) {
-     
+        
         super(app);
-      
+        
         initComponents();
-
+        
     }
 
     

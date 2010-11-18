@@ -17,11 +17,10 @@ public class GismaApp extends SingleFrameApplication {
      * At startup create and show the main frame of the application.
      */
     @Override protected void startup() {
-        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        //JFrame mainFrame = getMainFrame();
-        //mainFrame.setLocation((int) (screenSize.getWidth() - mainFrame.getWidth()) / 2 , (int) screenSize.getHeight() - 300);
-        //getMainFrame().setLocation(200, 200);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         show(new GismaView(this));
+        JFrame mainframe = this.getMainFrame();
+        mainframe.setLocation((int) (screenSize.getWidth() - mainframe.getWidth()) / 2 , (int) screenSize.getHeight() - mainframe.getHeight());
     }
 
     /**
