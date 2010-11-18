@@ -2,6 +2,8 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -53,9 +55,13 @@ class Mapa{
         //agrego un mapframe con sus propiedades
         frame = new JMapFrame(map);
         frame.setSize(600, 400);
+        //frame.pack();
         frame.enableStatusBar(false);   
         frame.setResizable(false);
-        frame.setUndecorated(true);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        //frame.setUndecorated(true);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation((int)(screenSize.getWidth() - frame.getWidth()) / 2 , (int) screenSize.getHeight() - frame.getHeight());
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
         JToolBar toolBar = frame.getToolBar();

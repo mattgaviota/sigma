@@ -5,6 +5,9 @@
 
 import org.jdesktop.application.Application;
 import org.jdesktop.application.SingleFrameApplication;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+import java.awt.Toolkit;
 /**
  * The main class of the application.
  */
@@ -14,6 +17,10 @@ public class GismaApp extends SingleFrameApplication {
      * At startup create and show the main frame of the application.
      */
     @Override protected void startup() {
+        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        //JFrame mainFrame = getMainFrame();
+        //mainFrame.setLocation((int) (screenSize.getWidth() - mainFrame.getWidth()) / 2 , (int) screenSize.getHeight() - 300);
+        //getMainFrame().setLocation(200, 200);
         show(new GismaView(this));
     }
 
@@ -24,6 +31,10 @@ public class GismaApp extends SingleFrameApplication {
      */
     @Override protected void configureWindow(java.awt.Window root) {
     }
+    
+    @Override protected void shutdown() {
+         exit();
+     }
 
     /**
      * A convenient static getter for the application instance.

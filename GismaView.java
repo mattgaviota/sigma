@@ -63,7 +63,6 @@ public class GismaView extends FrameView {
       
         initComponents();
 
-        probando= app.getMainFrame();
     }
 
     
