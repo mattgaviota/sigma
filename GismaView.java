@@ -218,7 +218,6 @@ public class GismaView extends FrameView {
                     cbMuseos.setSelected(true);
                     cbTurismo.setSelected(true);
                     cbRentACar.setSelected(true);
-                    btnActualizar.setEnabled(true);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
@@ -239,7 +238,6 @@ public class GismaView extends FrameView {
                     cbMuseos.setSelected(false);
                     cbTurismo.setSelected(false);
                     cbRentACar.setSelected(false);
-                    btnActualizar.setEnabled(false);
                 }
                 catch (Exception ex) {
 				ex.printStackTrace();
