@@ -122,7 +122,7 @@ class Mapa{
 			        ImageIcon img = new ImageIcon("./fotos/marilian.jpeg");
 			        JLabel etiquetaImg = new JLabel(img);
 					panelImagen.add(etiquetaImg);
-					JLabel etiqueta = new JLabel(" el luegar es: "+feature.getAttribute("name"));
+					JLabel etiqueta = new JLabel(" el lugar es: "+feature.getAttribute("name"));
 					popUp.getContentPane().add(panelImagen);
 					popUp.getContentPane().add(etiqueta);
 					popUp.pack();
