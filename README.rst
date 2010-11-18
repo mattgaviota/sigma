@@ -17,12 +17,12 @@ Para clonar y ayudar usa el comando:
 
 Como Funciona
 -------------
- * La clase ejecutable es Gis.java. Solo hay que compilar todo y ejecutar gis.
+ * La clase ejecutable es GismaApp.java. Solo hay que compilar todo y ejecutar GismaApp
 
 Requisitos
 ----------
 
  * Geotools 2.7-M3
  * JAI(incluida en la carpeta libs)
-
+ * AppFramework (incluida en la carpeta libs)
 
