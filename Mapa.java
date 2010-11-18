@@ -61,7 +61,7 @@ class Mapa{
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         //frame.setUndecorated(true);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setLocation((int)(screenSize.getWidth() - frame.getWidth()) / 2 , (int) screenSize.getHeight() - frame.getHeight());
+        frame.setLocation((int)(screenSize.getWidth() - frame.getWidth()) / 2 , 0);
         frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         frame.enableToolBar(true);
         JToolBar toolBar = frame.getToolBar();
