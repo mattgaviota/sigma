@@ -42,7 +42,7 @@ class MapView{
     private FilterFactory2 filterFactory = CommonFactoryFinder.getFilterFactory2(null);
         
         //Constructor
-   public InterfaceOfMap(Vector<Layer> VectorOfLayers,AbstractGridCoverage2DReader reader,Style estilo){  
+   public MapView(Vector<Layer> VectorOfLayers,AbstractGridCoverage2DReader reader,Style estilo){  
 		this.VectorOfLayers=VectorOfLayers;
         Map.setTitle("Sigma");
         //this method adds the georeferenced image in the background
@@ -56,8 +56,7 @@ class MapView{
         MapFrame = new JMapFrame(Map);
         MapFrame.setSize(600, 400);
         MapFrame.enableStatusBar(false);   
-        MapFrame.setResizable(false);
-        MapFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        MapFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         MapFrame.setLocation((int)(screenSize.getWidth() - MapFrame.getWidth()) / 2 , 0);
         MapFrame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);

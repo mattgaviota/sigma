@@ -15,7 +15,7 @@ import org.geotools.styling.*;
 
 public class Gis {
         //Attributes
-    private InterfaceOfMap mapita; 
+    private MapView mapita; 
 	private AbstractGridCoverage2DReader BackgroundImage ;
 	private StyleMaker styleMaker = new StyleMaker();
 	private Vector <Layer> VectorOfLayers = new Vector();
@@ -85,7 +85,7 @@ public class Gis {
         style = styleMaker.RGB(BackgroundImage); 
 
         //Just now I'm able to create an object of the class InterfaceOfMap
-		mapita = new InterfaceOfMap(VectorOfLayers,BackgroundImage,style);
+		mapita = new MapView(VectorOfLayers,BackgroundImage,style);
 	}
 
 	/*

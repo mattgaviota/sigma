@@ -17,6 +17,7 @@ public class SigmaApp extends SingleFrameApplication {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         show(new SigmaView(this));
         JFrame mainframe = this.getMainFrame();
+        mainframe.setResizable(false);
         mainframe.setLocation((int) (screenSize.getWidth() - mainframe.getWidth()) / 2 , (int) screenSize.getHeight() - mainframe.getHeight());
     }
 
