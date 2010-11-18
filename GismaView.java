@@ -142,10 +142,7 @@ public class GismaView extends FrameView {
         cbHotel123.setName("cbHotel123"); // NOI18N
         cbHotel123.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (cbHotel123.isSelected()){
-                    sigma.toggleLayerVisibility("Hotel123");
-                }
-                else sigma.toggleLayerVisibility("Hotel123");
+                sigma.toggleLayerVisibility(1);
             }
         });
 
@@ -153,10 +150,7 @@ public class GismaView extends FrameView {
         cbHotel45.setName("cbHotel45"); // NOI18N
         cbHotel45.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (cbHotel45.isSelected()){
-                    sigma.toggleLayerVisibility("Hotel45");
-                }
-                else sigma.toggleLayerVisibility("Hotel45");
+                sigma.toggleLayerVisibility(2);
             }
         });
 
@@ -165,21 +159,7 @@ public class GismaView extends FrameView {
         cbIglesias.setName("cbIglesias"); // NOI18N
         cbIglesias.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (cbIglesias.isSelected()){
-                    sigma.toggleLayerVisibility("Iglesias");
-                }
-                else sigma.toggleLayerVisibility("Iglesias");
-            }
-        });
-
-        cbMuseos.setText(resourceMap.getString("cbMuseos.text")); // NOI18N
-        cbMuseos.setName("cbMuseos"); // NOI18N
-        cbMuseos.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-                if (cbMuseos.isSelected()){
-                    sigma.toggleLayerVisibility("Museos");
-                }
-                else sigma.toggleLayerVisibility("Museos");
+                sigma.toggleLayerVisibility(3);
             }
         });
 
@@ -187,10 +167,15 @@ public class GismaView extends FrameView {
         cbRentACar.setName("cbRentACar"); // NOI18N
         cbRentACar.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (cbRentACar.isSelected()){
-                    sigma.toggleLayerVisibility("RentACar");
-                }
-                else sigma.toggleLayerVisibility("RentACar");
+                sigma.toggleLayerVisibility(4);
+            }
+        });
+
+        cbMuseos.setText(resourceMap.getString("cbMuseos.text")); // NOI18N
+        cbMuseos.setName("cbMuseos"); // NOI18N
+        cbMuseos.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent e) {
+                sigma.toggleLayerVisibility(5);
             }
         });
 
@@ -198,10 +183,7 @@ public class GismaView extends FrameView {
         cbTurismo.setName("cbTurismo"); // NOI18N
         cbTurismo.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
-                if (cbTurismo.isSelected()){
-                    sigma.toggleLayerVisibility("Turismo");
-                }
-                else sigma.toggleLayerVisibility("Turismo");
+                sigma.toggleLayerVisibility(6);
             }
         });
 

@@ -28,14 +28,14 @@ public class Gis {
 		mapa = new File("./shp/hoteles1.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(2,20,1);
+        estilo = creadorEstilo.estiloPunto(2,10,1);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
         mapa = new File("./shp/hoteles5.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(2,20,1);
+        estilo = creadorEstilo.estiloPunto(2,10,1);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
@@ -43,7 +43,7 @@ public class Gis {
         mapa = new File("./shp/iglesias.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,20,2);
+        estilo = creadorEstilo.estiloPunto(1,10,2);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
@@ -51,7 +51,7 @@ public class Gis {
         mapa = new File("./shp/rentcar.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,20,2);
+        estilo = creadorEstilo.estiloPunto(1,10,2);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
@@ -59,14 +59,14 @@ public class Gis {
         mapa = new File("./shp/museos.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,20,2);
+        estilo = creadorEstilo.estiloPunto(1,10,2);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
         mapa = new File("./shp/turismo.shp");
 		store = FileDataStoreFinder.getDataStore(mapa);
         featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(4,20,4);
+        estilo = creadorEstilo.estiloPunto(4,10,4);
         //agrego esa capa al vector
         capas.add(new Capa(featureSource,estilo));
         
@@ -85,14 +85,39 @@ public class Gis {
 	}
     
     public void toggleLayerVisibility(String msje){
-        if (msje.equals("Hotel123")) {
-                if (mapita.getLayer(1).isVisible())
-                    mapita.getLayer(1).setVisible(false);
-                else mapita.getLayer(1).setVisible(true);
-            
+        /*if (msje.equals("Hotel123")) {
+			if (mapita.getLayer(1).isVisible())
+				mapita.getLayer(1).setVisible(false);
+			else mapita.getLayer(1).setVisible(true);
         }
+        if (msje.equals("Hotel45")) {
+			if (mapita.getLayer(2).isVisible())
+				mapita.getLayer(2).setVisible(false);
+			else mapita.getLayer(2).setVisible(true);           
+        }
+        if (msje.equals("Hotel45")) {
+			if (mapita.getLayer(2).isVisible())
+				mapita.getLayer(2).setVisible(false);
+			else mapita.getLayer(2).setVisible(true);           
+        }
+        * me hiba a morir haciendo IF  ¬¬  */
         System.out.println(msje);
     }
+    public void toggleLayerVisibility(int id){
+		/*
+		 * Por Convencion:
+		 * 1 = hoteles 1,2,3 *
+		 * 2 = hoteles 4,5 *
+		 * 3 = iglesias
+		 * 4 = rentcar
+		 * 5 = museos
+		 * 6 = turismo
+		 */
+		if (mapita.getLayer(id).isVisible())
+				mapita.getLayer(id).setVisible(false);
+			else mapita.getLayer(id).setVisible(true);        
+		//System.out.println(msje);
+	}
     public void updateMap(){
         try {
             mapita.repaint();
