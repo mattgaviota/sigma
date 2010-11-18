@@ -1,3 +1,4 @@
+    //Libraries
 import java.util.Vector;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -13,86 +14,93 @@ import org.geotools.styling.*;
 
 
 public class Gis {
-    Mapa mapita; 
-	AbstractGridCoverage2DReader reader ;
-	Estilos creadorEstilo = new Estilos();
-	Vector <Capa> capas = new Vector();
-	Capa capa;
-	Style estilo;
-	SimpleFeatureSource featureSource;
-	FileDataStore store;
-	File mapa;
-	public void muestra () throws Exception {
-		//saco una capa, la convierto, en base a ella genero un estilo
-		//y con eso creo un objeto Capa con el featureSource y el estilo.
-		mapa = new File("./shp/hoteles1.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(2,10,1);
+        //Attributes
+    private InterfaceOfMap mapita; 
+	private AbstractGridCoverage2DReader BackgroundImage ;
+	private StyleMaker styleMaker = new StyleMaker();
+	private Vector <Layer> VectorOfLayers = new Vector();
+	private Style style;
+	private SimpleFeatureSource featureSource;
+	private FileDataStore Store;
+	private File FileMap;
+        
+        
+        //Methods    
+    public void muestra () throws Exception {
+        //in the variable FileMap we open an shp file in order to convert it into a Layer, this convertion requests an style and features
+        //saved in the variables style and featureSource
+		FileMap = new File("./shp/hoteles1.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource = Store.getFeatureSource();
+        style = styleMaker.estiloPunto(2,10,1);
+        //We add the layer "hoteles1"" in the vector
+        VectorOfLayers.add(new Layer(featureSource,style));
+        
+        //We repeat the process for layer's hoteles5
+        FileMap = new File("./shp/hoteles5.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource = Store.getFeatureSource();
+        style = styleMaker.estiloPunto(2,10,1);
+        //We add the layer "hoteles5" in the vector
+        VectorOfLayers.add(new Layer(featureSource,style));
+        
+        //We repeat the process for layer's iglesias
+        FileMap = new File("./shp/iglesias.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource= Store.getFeatureSource();
+        style = styleMaker.estiloPunto(1,10,2);
+        //We add the layer iglesias in the vector
+        VectorOfLayers.add(new Layer(featureSource,style));
+        
+        //We repeat the process for layer's rentcar
+        FileMap = new File("./shp/rentcar.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource= Store.getFeatureSource();
+        style = styleMaker.estiloPunto(1,10,2);
+        //We add the layer rentcar in the vector
+        VectorOfLayers.add(new Layer(featureSource,style));
+        
+        //We repeat the process for layer's museos
+        FileMap = new File("./shp/museos.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource= Store.getFeatureSource();
+        style = styleMaker.estiloPunto(1,10,2);
+        //We add the layer museos in the vector
+        VectorOfLayers.add(new Layer(featureSource,style));
+        
+        //We repeat the process for layer's turismo
+        FileMap = new File("./shp/turismo.shp");
+		Store = FileDataStoreFinder.getDataStore(FileMap);
+        featureSource = Store.getFeatureSource();
+        style = styleMaker.estiloPunto(4,10,4);
         //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
-        
-        mapa = new File("./shp/hoteles5.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(2,10,1);
-        //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
-        
-        //lo mismo para otras capas
-        mapa = new File("./shp/iglesias.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,10,2);
-        //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
-        
-        //lo mismo para otras capas
-        mapa = new File("./shp/rentcar.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,10,2);
-        //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
-        
-        //lo mismo para otras capas
-        mapa = new File("./shp/museos.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource= store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(1,10,2);
-        //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
-        
-        mapa = new File("./shp/turismo.shp");
-		store = FileDataStoreFinder.getDataStore(mapa);
-        featureSource = store.getFeatureSource();
-        estilo = creadorEstilo.estiloPunto(4,10,4);
-        //agrego esa capa al vector
-        capas.add(new Capa(featureSource,estilo));
+        VectorOfLayers.add(new Layer(featureSource,style));
         
         
-        //ahora la img de fondo 
+        // Here we set the png image in the background
         File img = new File("./mapas/mapasalta.png");
         AbstractGridFormat format = GridFormatFinder.findFormat(img);        
-        reader = format.getReader(img);
-        estilo = creadorEstilo.RGB(reader); //para q sea con color
-        //agrego esa capa al vector
+        BackgroundImage = format.getReader(img);
+        //this method sets colours in the background image
+        style = styleMaker.RGB(BackgroundImage); 
 
-        //mando lo q quiero en el mapa
-		mapita = new Mapa(capas,reader,estilo);
+        //Just now I'm able to create an object of the class InterfaceOfMap
+		mapita = new InterfaceOfMap(VectorOfLayers,BackgroundImage,style);
 	}
 
-    public void toggleLayerVisibility(int id){
-		/*
-		 * Por Convencion:
+	/*
+		 * Agreement:
 		 * 1 = hoteles 1,2,3 *
 		 * 2 = hoteles 4,5 *
 		 * 3 = iglesias
 		 * 4 = rentcar
 		 * 5 = museos
 		 * 6 = turismo
-		 */
-		if (mapita.getLayer(id).isVisible()){
+    */
+		
+    public void toggleLayerVisibility(int id){
+	
+        if (mapita.getLayer(id).isVisible()){
 			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
 			mapita.getLayer(id).setVisible(false);
 			mapita.setEnabled(id,false);
@@ -106,6 +114,8 @@ public class Gis {
 		}
 		//System.out.println(msje);
 	}
+    
+    
     public void updateMap(){
         try {
             mapita.repaint();
@@ -114,7 +124,8 @@ public class Gis {
             ex.printStackTrace();
         }
     }
-    public void buscar(HashMap params, String buscado){
+    
+    public void Search(HashMap params, String buscado){
         Iterator iterador = params.keySet().iterator();
         Object key; 
         while (iterador.hasNext()) {

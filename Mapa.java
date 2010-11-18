@@ -33,47 +33,45 @@ import org.opengis.filter.Filter;
 import org.opengis.filter.FilterFactory2;
 
 
-class Mapa{
-        //Atributos
-    MapContext map = new DefaultMapContext();
-    JMapFrame frame;
-	Vector<Capa> sources;
-	StyleFactory sf = CommonFactoryFinder.getStyleFactory(null);
-    FilterFactory2 ff = CommonFactoryFinder.getFilterFactory2(null);
+class InterfaceOfMap{
+        //Attributes
+    private MapContext Map = new DefaultMapContext();
+    private JMapFrame MapFrame;
+	private Vector<Layers> VectorOfLayers;
+    private FilterFactory2 filterFactory = CommonFactoryFinder.getFilterFactory2(null);
+        
         //Constructor
-    Mapa(Vector<Capa> sources,AbstractGridCoverage2DReader reader,Style estilo){  //reader es el mapa y estilo es el estilo del mapa
-		this.sources=sources;
-        //titulo de la ventana
-        map.setTitle("Testing");
-        //agrego mapa de fondo
-        map.addLayer(reader,estilo);
-        for(Capa layer : sources)
-            map.addLayer(layer.getFeatureSource(),layer.getEstilo());
-        for(MapLayer layerMap : map.getLayers())
+   public InterfaceOfMap(Vector<Layers> VectorOfLayers,AbstractGridCoverage2DReader reader,Style estilo){  //reader es el mapa y estilo es el estilo del mapa
+		this.VectorOfLayers=VectorOfLayers;
+        Map.setTitle("Sigma");
+        //this method adds the georeferenced image in the background
+        Map.addLayer(reader,estilo);
+        for(Layers layer : VectorOfLayers)
+            Map.addLayer(layer.getFeatureSource(),layer.getEstilo());
+        for(MapLayer layerMap : Map.getLayers())
             layerMap.setVisible(false);
-        map.getLayer(0).setVisible(true);
-        //agrego un mapframe con sus propiedades
-        frame = new JMapFrame(map);
-        frame.setSize(600, 400);
-        //frame.pack();
-        frame.enableStatusBar(false);   
-        frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        //frame.setUndecorated(true);
+        Map.getLayer(0).setVisible(true);
+        //We add a MapFrame with all his features
+        MapFrame = new JMapFrame(Map);
+        MapFrame.setSize(600, 400);
+        MapFrame.enableStatusBar(false);   
+        MapFrame.setResizable(false);
+        MapFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setLocation((int)(screenSize.getWidth() - frame.getWidth()) / 2 , 0);
-        frame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
-        frame.enableToolBar(true);
-        JToolBar toolBar = frame.getToolBar();
+        MapFrame.setLocation((int)(screenSize.getWidth() - MapFrame.getWidth()) / 2 , 0);
+        MapFrame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
+        MapFrame.enableToolBar(true);
+        JToolBar toolBar = MapFrame.getToolBar();
         Icon InfoIcono = new ImageIcon("./images/information.gif");
         JButton btn = new JButton(InfoIcono);
         toolBar.addSeparator();
         toolBar.add(btn);
 
+        //We set an actionlistener for information icon       
         btn.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                frame.getMapPane().setCursorTool(
+                MapFrame.getMapPane().setCursorTool(
                         new CursorTool() {
 
                             @Override
@@ -83,22 +81,22 @@ class Mapa{
                         });
             }
         });
-        //muestro el mapa
-        frame.setVisible(true);
+        //In this method the visibility of the map is changed so We're able to see the map
+        MapFrame.setVisible(true);
 	}
 	
-	void mostrarInfo(MapMouseEvent ev) {
-		//hago un rectangulo de 20x20mm (asi no hay q hacer click en el punto EXACTO)
+	public void mostrarInfo(MapMouseEvent ev) {
+        //We make a 20x20 mm rectangle wich is the radio in where we are able click in 
 		Point screenPos = ev.getPoint();
         Rectangle screenRect = new Rectangle(screenPos.x-2, screenPos.y-2, 20, 20);
-        AffineTransform screenToWorld = frame.getMapPane().getScreenToWorldTransform();
+        AffineTransform screenToWorld = MapFrame.getMapPane().getScreenToWorldTransform();
         Rectangle2D worldRect = screenToWorld.createTransformedShape(screenRect).getBounds2D();
-        ReferencedEnvelope bbox = new ReferencedEnvelope( worldRect, frame.getMapContext().getCoordinateReferenceSystem());
-        //por cada capa del mapa que este habilitada (visible)...
-        for(Capa lay:sources){
+        ReferencedEnvelope bbox = new ReferencedEnvelope( worldRect, MapFrame.getMapContext().getCoordinateReferenceSystem());
+        //We iterate checking the availability of the layers...
+        for(Layers lay:VectorOfLayers){
 			if(lay.getEnabled()){
-				//...intersecto donde se hizo click, por la poscicion donde esta algun objeto
-				Filter filter = ff.intersects(ff.property(lay.getGeometry()), ff.literal(bbox));
+				//...We identify the object in the area where the click was done and we show his features
+				Filter filter = filterFactory.intersects(filterFactory.property(lay.getGeometry()), filterFactory.literal(bbox));
 				try {
 					SimpleFeatureCollection selectedFeatures = lay.getFeatureSource().getFeatures(filter);
 					SimpleFeatureIterator iter = selectedFeatures.features();
@@ -119,7 +117,6 @@ class Mapa{
 							popUp.getContentPane().add(etiqueta);
 							popUp.getContentPane().add(etiqueta2);
 							popUp.pack();
-							//popUp.setSize(500, 300);
 							popUp.setVisible(true);
 							popUp.setResizable(false);
 							
@@ -136,17 +133,17 @@ class Mapa{
 	}
     
     MapLayer getLayer(int pos){
-        return map.getLayer(pos);
+        return Map.getLayer(pos);
     }
     
-    void repaint(){
-        frame.repaint();
+    public void repaint(){
+        MapFrame.repaint();
     }
     
-    void setEnabled(int id,boolean cond){
+    public void setEnabled(int id,boolean cond){
 		id-=1;
-		sources.get(id).setEnabled(cond);
-		System.out.println(id+"chilla-"+sources.get(id).getEnabled());
+		VectorOfLayers.get(id).setEnabled(cond);
+		System.out.println(id+"chilla-"+VectorOfLayers.get(id).getEnabled());
 	}
     
 }
