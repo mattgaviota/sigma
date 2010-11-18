@@ -109,16 +109,20 @@ class Mapa{
 							JFrame popUp = new JFrame("Info de: "+feature.getAttribute("name"));
 							popUp.getContentPane().setLayout(new GridLayout(1, 2));
 							JPanel panelImagen = new JPanel(new FlowLayout());
-							ImageIcon img = new ImageIcon("./fotos/marilian.jpeg");
+							String urlPhoto = (String)feature.getAttribute("photo");
+							ImageIcon img = new ImageIcon(urlPhoto);
 							JLabel etiquetaImg = new JLabel(img);
 							panelImagen.add(etiquetaImg);
-							JLabel etiqueta = new JLabel(" el lugar es: "+feature.getAttribute("name"));
+							JLabel etiqueta = new JLabel("Nombre: "+feature.getAttribute("name"));
+							JLabel etiqueta2 = new JLabel("Dirección: "+feature.getAttribute("descriptio"));
 							popUp.getContentPane().add(panelImagen);
 							popUp.getContentPane().add(etiqueta);
+							popUp.getContentPane().add(etiqueta2);
 							popUp.pack();
 							//popUp.setSize(500, 300);
 							popUp.setVisible(true);
 							popUp.setResizable(false);
+							
 						}
 					} 
 					finally	{ iter.close(); }
