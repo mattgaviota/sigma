@@ -1,7 +1,4 @@
-/*
- *   PopUp class  
- *      
- */
+    //Libraries
 import org.opengis.feature.simple.SimpleFeature;
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
@@ -12,14 +9,19 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.Icon;
 
+/**
+*       PopUp class: Makes a popup from a SimpleFeature
+*    passed by parameter  
+*    @author Gil-Novoa-Sarmiento
+*/
+
 public class PopUp {
     //Attributes
     JFrame popUp;
-    /**
-     * Constructor of PopUp Class
-     * @param feature SimpleFeature
-     * @author Gil-Novoa-Sarmiento
-     */
+/**
+*      PopUp Constructor
+*   @param feature SimpleFeature
+*/
 	public PopUp (SimpleFeature feature) {		
 		popUp = new JFrame("Info de: "+feature.getAttribute("name"));
         //set the layout of the frame
