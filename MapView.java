@@ -168,13 +168,13 @@ public class MapView{
 		try{
 			SimpleFeatureCollection points = VectorOfLayers.get(id).getFeatureSource().getFeatures();
 			SimpleFeatureIterator iter = points.features();
-			while(iter.hasNext()){
+			while(iter.hasNext()) {
 				SimpleFeature feature = iter.next();
 				String name = ""+feature.getAttribute("name");
                 name = name.toLowerCase();
                 str = str.toLowerCase();
-				if(name.indexOf(str)>=0){
-					System.out.println(name+" Contiene: "+str);
+				if(name.indexOf(str) >= 0){
+                    PopUp popUpSearched = new PopUp(feature);
 				}
 			}
 		}
