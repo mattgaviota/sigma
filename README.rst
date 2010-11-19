@@ -1,7 +1,7 @@
 Proyecto de SIG en Java
 =======================
 
-.. image:: https://github.com/mattgaviota/sigma/raw/4096649bf9232c4f3924e1c3976261842c3ec501/logo.png
+.. image:: http://lh6.ggpht.com/_1RkembioqA8/TOXHuDKcxWI/AAAAAAAAFn8/-vYKqWocSNI/logo.png
    :scale: 50 %
    :align: right
 
