@@ -139,7 +139,8 @@ public class Gis {
 */ 
     public void Search(HashMap params, String buscado){
         Iterator iterador = params.keySet().iterator();
-        Object key; 
+        Object key;
+        mapita.setMaxPopUp(); 
         while (iterador.hasNext()) {
             key = iterador.next();
             Integer num = (Integer) params.get(key);

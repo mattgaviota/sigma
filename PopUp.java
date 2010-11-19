@@ -17,7 +17,7 @@ import javax.swing.Icon;
 
 public class PopUp {
     //Attributes
-    JFrame popUp;
+    private JFrame popUp;
 /**
 *      PopUp Constructor
 *   @param feature SimpleFeature

@@ -44,7 +44,7 @@ public class MapView{
     private MapContext Map = new DefaultMapContext();
 	private Vector<Layer> VectorOfLayers;
     private FilterFactory2 filterFactory = CommonFactoryFinder.getFilterFactory2(null);
-        
+    private int maxPopUps = 0;    
 /**   
 *     MapView Constructor
 *   @param VectorOfLayers  Vector of layers
@@ -160,7 +160,6 @@ public class MapView{
     public void setEnabled(int id,boolean cond){
 		id-=1;
 		VectorOfLayers.get(id).setEnabled(cond);
-		System.out.println(id+"chilla-"+VectorOfLayers.get(id).getEnabled());
 	}
 	public void Search(int id,String str){
 		id--;
@@ -171,10 +170,13 @@ public class MapView{
 			while(iter.hasNext()) {
 				SimpleFeature feature = iter.next();
 				String name = ""+feature.getAttribute("name");
+                String address = ""+feature.getAttribute("descriptio");
+                address = address.toLowerCase();
                 name = name.toLowerCase();
                 str = str.toLowerCase();
-				if(name.indexOf(str) >= 0){
+				if((name.indexOf(str) >= 0 || address.indexOf(str) >= 0)&& maxPopUps <= 5){
                     PopUp popUpSearched = new PopUp(feature);
+                    maxPopUps += 1;
 				}
 			}
 		}
@@ -182,4 +184,8 @@ public class MapView{
 			ex.printStackTrace();
 		}
 	}
+    
+    public void setMaxPopUp(){
+        maxPopUps = 0;
+    }
 }
