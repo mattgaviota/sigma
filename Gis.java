@@ -106,18 +106,7 @@ public class Gis {
 		
     public void toggleLayerVisibility(int id){
 	
-        if (mapita.getLayer(id).isVisible()){
-			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
-			mapita.getLayer(id).setVisible(false);
-			mapita.setEnabled(id,false);
-			System.out.println(id+"cambio-"+mapita.getLayer(id).isVisible());
-		}
-		else {
-			System.out.println(id+"-"+mapita.getLayer(id).isVisible());
-			mapita.getLayer(id).setVisible(true);        
-			mapita.setEnabled(id,true);
-		}
-		
+        mapita.LayerVisibility(id);
 	}
     
 /**

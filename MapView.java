@@ -188,4 +188,16 @@ public class MapView{
     public void setMaxPopUp(){
         maxPopUps = 0;
     }
+    
+    public void LayerVisibility(int id){
+        
+        if (this.getLayer(id).isVisible()){
+			this.getLayer(id).setVisible(false);
+			this.setEnabled(id,false);
+		}
+		else {
+			this.getLayer(id).setVisible(true);        
+			this.setEnabled(id,true);
+		}
+    }
 }
