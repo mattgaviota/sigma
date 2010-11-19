@@ -161,6 +161,11 @@ public class MapView{
 		id-=1;
 		VectorOfLayers.get(id).setEnabled(cond);
 	}
+/**
+*       Search Method searchs a point matching the string passed with place's address or name 
+*     @param id  Integer
+*     @param str String
+*/
 	public void Search(int id,String str){
 		id--;
 		StyleMaker styler = new StyleMaker();
@@ -184,11 +189,22 @@ public class MapView{
 			ex.printStackTrace();
 		}
 	}
-    
+
+/**
+*       setMaxPopup Method
+*/ 
     public void setMaxPopUp(){
         maxPopUps = 0;
     }
-    
+ /**     LayerVisibility Method sets the visibility of a layer specificied by an integer.
+     * Agreement:
+     * 1 = hoteles 1,2,3 *
+	 * 2 = hoteles 4,5 *
+	 * 3 = iglesias
+	 * 4 = rentcar
+	 * 5 = museos
+	 * 6 = turismo
+*/   
     public void LayerVisibility(int id){
         
         if (this.getLayer(id).isVisible()){
