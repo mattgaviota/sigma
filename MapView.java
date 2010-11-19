@@ -117,22 +117,7 @@ public class MapView{
 					try {
 						while (iter.hasNext()) {
 							SimpleFeature feature = iter.next();
-							System.out.println("Se muestra info de:" + lay.getEnabled());
-							JFrame popUp = new JFrame("Info de: "+feature.getAttribute("name"));
-							popUp.getContentPane().setLayout(new GridLayout(1, 2));
-							JPanel panelImagen = new JPanel(new FlowLayout());
-							String urlPhoto = (String)feature.getAttribute("photo");
-							ImageIcon IconPhoto = new ImageIcon(urlPhoto);
-							JLabel etiquetaImg = new JLabel(IconPhoto);
-							panelImagen.add(etiquetaImg);
-							JLabel lblName = new JLabel("Nombre: "+feature.getAttribute("name"));
-							JLabel lblAddress = new JLabel("Dirección: "+feature.getAttribute("descriptio"));
-							popUp.getContentPane().add(panelImagen);
-							popUp.getContentPane().add(lblName);
-							popUp.getContentPane().add(lblAddress);
-							popUp.pack();
-							popUp.setVisible(true);
-							popUp.setResizable(false);
+							PopUp popUp = new PopUp(feature);
 							
 						}
 					} 
@@ -186,6 +171,8 @@ public class MapView{
 			while(iter.hasNext()){
 				SimpleFeature feature = iter.next();
 				String name = ""+feature.getAttribute("name");
+                name = name.toLowerCase();
+                str = str.toLowerCase();
 				if(name.indexOf(str)>=0){
 					System.out.println(name+" Contiene: "+str);
 				}
