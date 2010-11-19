@@ -64,10 +64,10 @@ public class MapView{
         Map.getLayer(0).setVisible(true);
         //We add a MapFrame with all its features
         MapFrame = new JMapFrame(Map);
-        MapFrame.setSize(600, 400);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        MapFrame.setSize((int)screenSize.getWidth(), 500);
         MapFrame.enableStatusBar(false);   
         MapFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         MapFrame.setLocation((int)(screenSize.getWidth() - MapFrame.getWidth()) / 2 , 0);
         MapFrame.enableTool(JMapFrame.Tool.ZOOM, JMapFrame.Tool.PAN, JMapFrame.Tool.RESET);
         MapFrame.enableToolBar(true);
