@@ -38,7 +38,7 @@ public class Gis {
 		FileMap = new File("./shp/hoteles1.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource = Store.getFeatureSource();
-        style = styleMaker.estiloPunto(2,10,1);
+        style = styleMaker.estiloPunto(1,10,1);
         //We add the layer "hoteles1"" in the vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -46,7 +46,7 @@ public class Gis {
         FileMap = new File("./shp/hoteles5.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource = Store.getFeatureSource();
-        style = styleMaker.estiloPunto(2,10,1);
+        style = styleMaker.estiloPunto(2,10,2);
         //We add the layer "hoteles5" in the vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -54,7 +54,7 @@ public class Gis {
         FileMap = new File("./shp/iglesias.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource= Store.getFeatureSource();
-        style = styleMaker.estiloPunto(1,10,2);
+        style = styleMaker.estiloPunto(3,10,3);
         //We add the layer iglesias in the vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -62,7 +62,7 @@ public class Gis {
         FileMap = new File("./shp/rentcar.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource= Store.getFeatureSource();
-        style = styleMaker.estiloPunto(1,10,2);
+        style = styleMaker.estiloPunto(4,10,4);
         //We add the layer rentcar in the vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -70,7 +70,7 @@ public class Gis {
         FileMap = new File("./shp/museos.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource= Store.getFeatureSource();
-        style = styleMaker.estiloPunto(1,10,2);
+        style = styleMaker.estiloPunto(5,10,5);
         //We add the layer museos in the vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -78,7 +78,7 @@ public class Gis {
         FileMap = new File("./shp/turismo.shp");
 		Store = FileDataStoreFinder.getDataStore(FileMap);
         featureSource = Store.getFeatureSource();
-        style = styleMaker.estiloPunto(4,10,4);
+        style = styleMaker.estiloPunto(6,10,6);
         //agrego esa capa al vector
         VectorOfLayers.add(new Layer(featureSource,style));
         
@@ -142,7 +142,8 @@ public class Gis {
         Object key; 
         while (iterador.hasNext()) {
             key = iterador.next();
-            System.out.println(params.get(key) + buscado);
+            Integer num = (Integer) params.get(key);
+            mapita.Search(num.intValue(),buscado);
         }
     }
 }

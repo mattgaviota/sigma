@@ -177,5 +177,22 @@ public class MapView{
 		VectorOfLayers.get(id).setEnabled(cond);
 		System.out.println(id+"chilla-"+VectorOfLayers.get(id).getEnabled());
 	}
-    
+	public void Search(int id,String str){
+		id--;
+		StyleMaker styler = new StyleMaker();
+		try{
+			SimpleFeatureCollection points = VectorOfLayers.get(id).getFeatureSource().getFeatures();
+			SimpleFeatureIterator iter = points.features();
+			while(iter.hasNext()){
+				SimpleFeature feature = iter.next();
+				String name = ""+feature.getAttribute("name");
+				if(name.indexOf(str)>=0){
+					System.out.println(name+" Contiene: "+str);
+				}
+			}
+		}
+		catch (Exception ex){
+			ex.printStackTrace();
+		}
+	}
 }

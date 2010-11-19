@@ -24,7 +24,7 @@ import java.util.HashMap;
 public class SigmaView extends FrameView {
     //Attributes
     private  Gis sigma;
-    private  HashMap<String, String> parametros;
+    private  HashMap<String,Integer> parametros;
     private  JButton btn2Buscar;
     private  JButton btnActualizar;
     private  JButton btnNinguna;
@@ -91,7 +91,7 @@ public class SigmaView extends FrameView {
         catch (Exception ex){
             ex.printStackTrace();
         }
-        parametros = new HashMap<String, String>();
+        parametros = new HashMap<String,Integer>();
         
         panMain = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -320,7 +320,7 @@ public class SigmaView extends FrameView {
         cb2Hotel45.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Hotel45.isSelected()){
-                    parametros.put("cb2Hotel45","Hotel45");
+                    parametros.put("cb2Hotel45",new Integer(2));
                 }
                 else {
                     if (parametros.containsKey("cb2Hotel45")){
@@ -336,7 +336,7 @@ public class SigmaView extends FrameView {
         cb2Hotel123.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Hotel123.isSelected()){
-                    parametros.put("cb2Hotel123","Hotel123");
+                    parametros.put("cb2Hotel123",new Integer(1));
                 }
                 else {
                     if (parametros.containsKey("cb2Hotel123")){
@@ -352,7 +352,7 @@ public class SigmaView extends FrameView {
         cb2Iglesias.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Iglesias.isSelected()){
-                    parametros.put("cb2Iglesias","Iglesias");
+                    parametros.put("cb2Iglesias",new Integer(3));
                 }
                 else {
                     if (parametros.containsKey("cb2Iglesias")){
@@ -370,7 +370,7 @@ public class SigmaView extends FrameView {
         cb2Turismo.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Turismo.isSelected()){
-                    parametros.put("cb2Turismo","Turismo");
+                    parametros.put("cb2Turismo",new Integer(6));
                 }
                 else {
                     if (parametros.containsKey("cb2Turismo")){
@@ -388,7 +388,7 @@ public class SigmaView extends FrameView {
         cb2RentAcar.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2RentAcar.isSelected()){
-                    parametros.put("cb2RentAcar","RentAcar");
+                    parametros.put("cb2RentAcar",new Integer(4));
                 }
                 else {
                     if (parametros.containsKey("cb2RentAcar")){
@@ -406,7 +406,7 @@ public class SigmaView extends FrameView {
         cb2Museos.addItemListener(new ItemListener() {
             public void itemStateChanged(ItemEvent e) {
                 if (cb2Museos.isSelected()){
-                    parametros.put("cb2Museos","Museos");
+                    parametros.put("cb2Museos",new Integer(5));
                 }
                 else {
                     if (parametros.containsKey("cb2Museos")){

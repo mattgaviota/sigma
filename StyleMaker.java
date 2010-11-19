@@ -7,6 +7,7 @@ import org.geotools.coverage.grid.io.AbstractGridCoverage2DReader;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.styling.*;
 import org.opengis.filter.FilterFactory2;
+import org.opengis.filter.identity.FeatureId;
 import org.opengis.style.ContrastMethod;
 
 /**
@@ -98,6 +99,8 @@ public class StyleMaker{
 			case 2:mark = styleFactory.getStarMark();break;
 			case 3:mark = styleFactory.getSquareMark();break;
 			case 4:mark = styleFactory.getTriangleMark();break;
+			case 5:mark = styleFactory.getXMark();break;
+			case 6:mark = styleFactory.getCrossMark();break;
 		}
 		mark.setStroke(styleFactory.createStroke(filterFactory.literal(Color.BLACK), filterFactory.literal(1)));
         switch (color) {
@@ -105,11 +108,10 @@ public class StyleMaker{
 			case 2:mark.setFill(styleFactory.createFill(filterFactory.literal(Color.BLUE)));break;
 			case 3:mark.setFill(styleFactory.createFill(filterFactory.literal(Color.YELLOW)));break;
 			case 4:mark.setFill(styleFactory.createFill(filterFactory.literal(Color.BLACK)));break;
+			case 5:mark.setFill(styleFactory.createFill(filterFactory.literal(Color.GREEN)));break;
+			case 6:mark.setFill(styleFactory.createFill(filterFactory.literal(Color.ORANGE)));break;
 		}
-        //mark.setStroke(styleFactory.createStroke(filterFactory.literal(Color.BLUE), filterFactory.literal(1)));
-        //mark.setFill(styleFactory.createFill(filterFactory.literal(Color.RED)));
 		gr.setSize(filterFactory.literal(tam));
-		
         gr.graphicalSymbols().clear();
         gr.graphicalSymbols().add(mark);
         
@@ -123,6 +125,5 @@ public class StyleMaker{
         Style style = styleFactory.createStyle();
         style.featureTypeStyles().add(fts);
         return style;
-	}
-	
+	}	
 }
