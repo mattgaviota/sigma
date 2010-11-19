@@ -24,9 +24,11 @@ public class PopUp {
 */
 	public PopUp (SimpleFeature feature) {		
 		popUp = new JFrame("Info de: "+feature.getAttribute("name"));
+        
         //set the layout of the frame
         popUp.getContentPane().setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
+        
         //put the photo in to the frame
         JPanel panelImagen = new JPanel(new FlowLayout());
         String urlPhoto = (String)feature.getAttribute("photo");
@@ -38,6 +40,7 @@ public class PopUp {
         constraints.gridwidth = 1; // column width
         constraints.gridheight = 4; // row height
         popUp.getContentPane().add(panelImagen, constraints);
+        
         //put the lblname in to the frame
         JLabel lblName = new JLabel("Nombre: "+feature.getAttribute("name"));
         constraints.gridx = 1; // initial column
@@ -45,6 +48,7 @@ public class PopUp {
         constraints.gridwidth = 1; // column width
         constraints.gridheight = 1; // row height
         popUp.getContentPane().add(lblName, constraints);
+        
         //put the lblAdrees in to the fram
         JLabel lblAddress = new JLabel("Dirección: "+feature.getAttribute("descriptio"));
         constraints.gridx = 1; // initial column
@@ -52,6 +56,22 @@ public class PopUp {
         constraints.gridwidth = 1; // column width
         constraints.gridheight = 1; // row height
         popUp.getContentPane().add(lblAddress, constraints);
+        
+        //put the lblPhone in to the frame
+        JLabel lblPhone = new JLabel("Telefono: "+feature.getAttribute("telephone"));
+        constraints.gridx = 1; // initial column
+        constraints.gridy = 2; // initial row
+        constraints.gridwidth = 1; // column width
+        constraints.gridheight = 1; // row height
+        popUp.getContentPane().add(lblPhone, constraints);
+        
+        //put the lblPhone in to the frame
+        JLabel lblWeb = new JLabel("Web/e-mail: "+feature.getAttribute("webpage"));
+        constraints.gridx = 1; // initial column
+        constraints.gridy = 3; // initial row
+        constraints.gridwidth = 1; // column width
+        constraints.gridheight = 1; // row height
+        popUp.getContentPane().add(lblWeb, constraints);
         
         popUp.setSize(720, 300);
         popUp.setVisible(true);
