@@ -17,7 +17,7 @@ Para clonar y ayudar usa el comando:
 
 Como Funciona
 -------------
- * La clase ejecutable es GismaApp.java. Solo hay que compilar todo y ejecutar GismaApp
+ * La clase ejecutable es SigmaApp.java. Solo hay que compilar todo y ejecutar SigmaApp
 
 Requisitos
 ----------
